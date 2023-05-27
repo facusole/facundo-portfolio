@@ -1,0 +1,113 @@
+---
+import Navbar from '../components/Navbar.astro'
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav>
+			<Navbar />
+		</nav>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+	/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --fs__52: 3.25rem;
+  --fs__48: 3rem;
+  --fs__40: 2.5rem;
+  --fs__36: 2.25rem;
+  --fs__20: 1.25rem;
+  --fs__18: 1.125rem;
+  --fs__16: 1rem;
+  --fs__14: 0.875rem;
+
+  --fw__regular: 400;
+  --fw__medium: 500;
+
+  --clr__white: hsl(0, 0%, 100%);
+  --clr__black: hsl(227, 10%, 18%);
+  --clr__ultra__black: hsl(220, 10%, 6%);
+
+  --clr__primary__purple: hsl(248, 90%, 59%);
+  --clr__secondary__purple: hsl(245, 87%, 97%);
+  --clr__lime: hsl(73, 100%, 61%);
+}
+
+::selection {
+  background: var(--clr__lime);
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  font-weight: var(--fw__regular);
+}
+</style>
