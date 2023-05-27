@@ -17,10 +17,8 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<nav>
-			<Navbar />
-		</nav>
+	<body class="p__inline">
+		<Navbar />
 		<slot />
 	</body>
 </html>
@@ -109,5 +107,9 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
   font-family: Raleway, sans-serif;
   font-weight: var(--fw__regular);
+}
+
+.p__inline {
+  padding-inline: 1.5rem;
 }
 </style>
