@@ -1,0 +1,41 @@
+---
+import CTA from "./cta/CTA.astro";
+---
+
+<section>
+    <h3>Let's collaborate together!</h3>
+    <h2>facundojsole@gmail.com</h2>
+    <span>
+        <CTA cta='Copy email' />
+    </span>
+</section>
+
+<style>
+    section {
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        margin-block: 2rem;
+        padding: 7rem 1rem;
+        background: var(--clr__secondary__purple);
+        border-radius: 2.5rem;
+    }
+
+    :is(h2, h3) {
+        color: var(--clr__primary__purple);
+    }
+
+    h2 {
+        font-size: var(--fs__24);
+        font-weight: var(--fw__medium);
+    }
+
+    h3 {
+        font-size: var(--fs__18);
+        font-weight: var(--fw__regular);
+    }
+
+</style>
