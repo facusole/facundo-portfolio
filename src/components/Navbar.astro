@@ -1,7 +1,7 @@
 <nav>
-    <div class="menu__container">
-        <div class="icon"></div>
-    </div>
+    <button class="menu__container">
+        <img src="/assets/purple__burgerMenu.svg" alt="Expandable burger menu icon to access the navbar links.">
+    </button>
     <button>Work with me</button>
 </nav>
 <style>
@@ -10,11 +10,15 @@
         justify-content: space-between;
         align-items: center;
         margin-block: 2rem;
+
+        background-color: var(--clr__secondary__purple);
+        border-radius: 100vh;
+        padding: .5rem 1rem;
     }
 
-    .icon {
-        height: 16px;
-        width: 16px;
-        border: solid 1px black;
+    .menu__container {
+        background: none;
+        border: transparent;
+        cursor: pointer;
     }
 </style>
