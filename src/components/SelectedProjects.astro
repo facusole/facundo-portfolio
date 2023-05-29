@@ -1,0 +1,42 @@
+---
+import Card from './card/Card.astro'
+---
+
+<section>
+    <h2>
+        Selected projects
+    </h2>
+    <div class="projects__container">
+		<Card src='/assets/plumaDePapel.webp' title='E-commerce' tags='React, CSS, Firebase' desc='With firebase as backend data base, full flow fromsearching to checkout.' link='https://pluma-de-papel.vercel.app' />
+        <Card src='/assets/plumaDePapel.webp' title='E-commerce' tags='React, CSS, Firebase' desc='With firebase as backend data base, full flow fromsearching to checkout.' link='https://pluma-de-papel.vercel.app' />
+        <Card src='/assets/plumaDePapel.webp' title='E-commerce' tags='React, CSS, Firebase' desc='With firebase as backend data base, full flow fromsearching to checkout.' link='https://pluma-de-papel.vercel.app' />
+        <Card src='/assets/plumaDePapel.webp' title='E-commerce' tags='React, CSS, Firebase' desc='With firebase as backend data base, full flow fromsearching to checkout.' link='https://pluma-de-papel.vercel.app' />
+    </div>
+</section>
+
+<style>
+
+    section {
+        margin-block: 2rem;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .projects__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+    }
+
+    .projects__container::-webkit-scrollbar {
+        display: none;
+    }
+</style>
