@@ -1,0 +1,32 @@
+---
+import SmallCard from './smallCard/SmallCard.astro'
+---
+<section>
+    <h2>How can I help?</h2>
+    <article>
+        <SmallCard src='/assets/abilities__square.svg' alt='square icon with nodes that represents a website being built' skill='Websites from scratch' description='With firebase as backend data base,full flow from searching to checkout.' />
+        <SmallCard src='/assets/abilities__code.svg' alt='code icon that represents the technologies I work with' skill='Technologies' description='The technologies I use the most are Astro and Next.js, with TypeScript, to build the frontend and TailwindCSS to style.' />
+        <SmallCard src='/assets/abilities__square.svg' alt='square icon with nodes that represents a website being built' skill='Websites from scratch' description='With firebase as backend data base,full flow from searching to checkout.' />
+    </article>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        margin-block: 3rem;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    } 
+
+</style>
