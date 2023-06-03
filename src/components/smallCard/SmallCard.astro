@@ -1,14 +1,21 @@
 ---
-const { src, alt, skill, description } = Astro.props
+const { src, alt, skill, description } = Astro.props;
 ---
+
 <div>
-    <img src={src} alt={alt}>
+    <img src={src} alt={alt} />
     <article>
         <h3>{skill}</h3>
         <p>{description}</p>
     </article>
 </div>
 <style>
+    img {
+        background: var(--clr__secondary__purple);
+        padding: 1rem;
+        border-radius: 1.25rem;
+    }
+
     div {
         border: solid 2px var(--clr__ultra__black);
         border-radius: 2.5rem;
@@ -16,9 +23,6 @@ const { src, alt, skill, description } = Astro.props
 
         display: grid;
         gap: 2rem;
-
-        width: 19rem;
-        margin-inline: auto;
     }
 
     h3 {
