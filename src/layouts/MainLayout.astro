@@ -22,6 +22,7 @@ const { title } = Astro.props;
 		<Navbar />
 		<slot />
     <Footer />
+    <div class="espacio"></div>
 	</body>
 </html>
 
@@ -96,6 +97,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --fw__semibold: 600;
 
   --clr__white: hsl(0, 0%, 100%);
+  --clr__gray: hsl(0, 0%, 43%);
   --clr__black1: hsl(227, 10%, 18%);
   --clr__black2: hsl(0, 2%, 11%);
   --clr__ultra__black: hsl(220, 10%, 6%);
@@ -116,5 +118,9 @@ body {
 
 .p__inline {
   padding-inline: 1.5rem;
+}
+
+.espacio {
+  height: 2rem;
 }
 </style>
