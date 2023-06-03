@@ -1,20 +1,71 @@
 <footer>
-    <button><img src="/assets/lime__burgerMenu.svg" alt="Expandable burger menu to access the links inside the footer"></button>
-    <button><img src="/assets/footer__upArrow.svg" alt="Arrow pointing upwards to go to the top of the site when you click on it"></button>
+    <ul>
+        <li><a href="#" rel="noopener noreferrer">Projects</a></li>
+        <li><a href="#" rel="noopener noreferrer">About me</a></li>
+        <li>
+            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li>
+            <a href="#" target="_blank" rel="noopener noreferrer">Github</a>
+        </li>
+    </ul>
+    <button
+        ><img
+            src="/assets/footer__upArrow.svg"
+            alt="Arrow pointing upwards to go to the top of the site when you click on it"
+        /></button
+    >
 </footer>
 <style>
+    footer {
+        background-color: var(--clr__black2);
+        border-radius: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 2rem;
+    }
+
+    ul {
+        list-style: none;
+        display: grid;
+        gap: 3rem;
+        padding: 0;
+        text-align: center;
+    }
+
+    li > a {
+        color: var(--clr__white);
+        text-decoration: none;
+        padding: 1rem 1.5rem;
+        text-align: center;
+        border: 2px solid var(--clr__gray);
+        transition: .2s linear;
+    }
+
+    li > a:is(:hover, :focus-within) {
+        color: var(--clr__black2);
+        background: var(--clr__lime);
+        border: 2px solid var(--clr__lime);
+    }
+
+    ul li:nth-child(odd) a {
+        border-radius: 1rem;
+    }
+
+    ul li:nth-child(even) a {
+        border-radius: 100vh;
+    }
+    
     button {
         background: none;
         cursor: pointer;
         border: transparent;
+        place-self: start;
     }
 
-    footer {
-        background-color: var(--clr__black2);
-        border-radius: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: .5rem 1rem;
+    button img {
+        width: 4rem;
+        aspect-ratio: 1/1;
     }
 </style>
