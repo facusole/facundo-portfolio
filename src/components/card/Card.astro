@@ -1,17 +1,23 @@
 ---
-const { src, alt, title, desc, link, tags } = Astro.props
-import TagLabel from '../tagLabel/TagLabel.astro'
+const { src, alt, title, desc, link, tags } = Astro.props;
+import TagLabel from "../tagLabel/TagLabel.astro";
 ---
 
 <article>
-    <img src={src} alt={alt}>
+    <img src={src} alt={alt} />
     <span>
         <TagLabel tags={tags} />
     </span>
     <h3>{title}</h3>
     <p>{desc}</p>
     <a href={link} target="_blank" rel="noreferrer noopener">
-        <span class="view__project">View live project</span><span class="view__project"><img src="/assets/card__rightArrow.svg" alt="Right arrow indicating that is an external link and you will be redirected"></span>
+        <span class="view__project">View live project</span><span
+            class="view__project"
+            ><img
+                src="/assets/card__rightArrow.svg"
+                alt="Right arrow indicating that is an external link and you will be redirected"
+            /></span
+        >
     </a>
 </article>
 
@@ -26,7 +32,7 @@ import TagLabel from '../tagLabel/TagLabel.astro'
         flex-direction: column;
         gap: 1rem;
 
-        transition: .2s linear;
+        transition: 0.2s linear;
 
         scroll-snap-align: start;
     }
@@ -49,7 +55,11 @@ import TagLabel from '../tagLabel/TagLabel.astro'
         border: solid 1px var(--clr__primary__purple);
         border-radius: 100vh;
 
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
     }
 
+    a img {
+        width: 1.5rem;
+        aspect-ratio: 1/1;
+    }
 </style>
