@@ -21,6 +21,7 @@
         font-size: var(--fs__28);
         font-weight: var(--fw__medium);
         text-align: center;
+        letter-spacing: -1px;
     }
 
     span {
@@ -37,5 +38,21 @@
         display: grid;
         place-content: center;
         margin-top: 1.5rem;
+    }
+
+    div img {
+        animation: hop 2s linear infinite;
+    }
+
+    @keyframes hop {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-1rem);
+        }
+        100% {
+            transform: translateY(0);
+        }
     }
 </style>
