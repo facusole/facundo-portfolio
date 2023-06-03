@@ -1,8 +1,8 @@
 ---
-import Navbar from '../components/Navbar.astro'
-import Footer from '../components/Footer.astro'
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -10,117 +10,135 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="p__inline">
-		<Navbar />
-		<slot />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="p__inline">
+    <Navbar />
+    <slot />
     <Footer />
     <div class="espacio"></div>
-	</body>
+  </body>
 </html>
 
 <style is:global>
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
-	/*
+  @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap");
+  /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-/*
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  /*
   2. Remove default margin
 */
-* {
-  margin: 0;
-}
-/*
+  * {
+    margin: 0;
+  }
+  /*
   3. Allow percentage-based heights in the application
 */
-html, body {
-  height: 100%;
-}
-/*
+  html,
+  body {
+    height: 100%;
+  }
+  /*
   Typographic tweaks!
   4. Add accessible line-height
   5. Improve text rendering
 */
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-/*
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-/*
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
-  font: inherit;
-}
-/*
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-/*
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+  /*
   9. Create a root stacking context
 */
-#root, #__next {
-  isolation: isolate;
-}
+  #root,
+  #__next {
+    isolation: isolate;
+  }
 
-:root {
-  --fs__52: 3.25rem;
-  --fs__48: 3rem;
-  --fs__40: 2.5rem;
-  --fs__36: 2.25rem;
-  --fs__24: 1.5rem;
-  --fs__20: 1.25rem;
-  --fs__18: 1.125rem;
-  --fs__16: 1rem;
-  --fs__14: 0.875rem;
+  :root {
+    --fs__52: 3.25rem;
+    --fs__48: 3rem;
+    --fs__40: 2.5rem;
+    --fs__36: 2.25rem;
+    --fs__28: 1.75rem;
+    --fs__24: 1.5rem;
+    --fs__20: 1.25rem;
+    --fs__18: 1.125rem;
+    --fs__16: 1rem;
+    --fs__14: 0.875rem;
 
-  --fw__regular: 400;
-  --fw__medium: 500;
-  --fw__semibold: 600;
+    --fw__regular: 400;
+    --fw__medium: 500;
+    --fw__semibold: 600;
 
-  --clr__white: hsl(0, 0%, 100%);
-  --clr__gray: hsl(0, 0%, 43%);
-  --clr__black1: hsl(227, 10%, 18%);
-  --clr__black2: hsl(0, 2%, 11%);
-  --clr__ultra__black: hsl(220, 10%, 6%);
+    --clr__white: hsl(0, 0%, 100%);
+    --clr__gray: hsl(0, 0%, 43%);
+    --clr__black1: hsl(227, 10%, 18%);
+    --clr__black2: hsl(0, 2%, 11%);
+    --clr__ultra__black: hsl(220, 10%, 6%);
 
-  --clr__primary__purple: hsl(248, 90%, 59%);
-  --clr__secondary__purple: hsl(245, 87%, 97%);
-  --clr__lime: hsl(73, 100%, 61%);
-}
+    --clr__primary__purple: hsl(248, 90%, 59%);
+    --clr__secondary__purple: hsl(245, 87%, 97%);
+    --clr__lime: hsl(73, 100%, 61%);
+  }
 
-::selection {
-  background: var(--clr__lime);
-}
+  ::selection {
+    background: var(--clr__lime);
+  }
 
-body {
-  font-family: Raleway, sans-serif;
-  font-weight: var(--fw__regular);
-}
+  body {
+    font-family: Raleway, sans-serif;
+    font-weight: var(--fw__regular);
+  }
 
-.p__inline {
-  padding-inline: 1.5rem;
-}
+  .p__inline {
+    padding-inline: 1.5rem;
+  }
 
-.espacio {
-  height: 2rem;
-}
+  .espacio {
+    height: 2rem;
+  }
 </style>
