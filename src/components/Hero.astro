@@ -2,14 +2,13 @@
     <h1>
         Front-end developer <br />
         who strives for <span
-            >clean <img
-                class="misc"
-                src="/assets/hero__misc.svg"
-                alt=""
-            /></span
+            >clean<img class="misc" src="/assets/hero__misc.svg" alt="" /></span
         > code
     </h1>
-    <div><img src="/assets/hero__bottomArrow.svg" alt="" /></div>
+    <div>
+        <img src="/assets/hero__bottomArrow.svg" alt="" />
+        <small>Scroll down</small>
+    </div>
 </section>
 
 <style>
@@ -37,11 +36,19 @@
     div {
         display: grid;
         place-content: center;
-        margin-top: 1.5rem;
+        place-items: center;
+        margin-top: 3rem;
     }
 
     div img {
         animation: hop 2s linear infinite;
+    }
+
+    small {
+        margin-top: 0.5rem;
+        font-size: var(--fs__16);
+        font-weight: var(--fw__regular);
+        color: var(--clr__gray);
     }
 
     @keyframes hop {
