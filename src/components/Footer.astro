@@ -43,6 +43,7 @@
 
     li > a {
         color: var(--clr__white);
+        font-weight: var(--fw__medium);
         text-decoration: none;
         padding: 1rem 1.5rem;
         text-align: center;
@@ -73,10 +74,15 @@
         cursor: pointer;
         border: transparent;
         text-align: center;
+        transition: 0.2s ease-in;
     }
 
     button img {
         width: 4rem;
         aspect-ratio: 1/1;
+    }
+
+    button:is(:hover, :focus-within) {
+        scale: 1.04;
     }
 </style>
