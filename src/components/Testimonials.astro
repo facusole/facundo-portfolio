@@ -1,0 +1,70 @@
+<section>
+    <h2>Some testimonials</h2>
+    <article>
+        <img src="/assets/testimonials__leftArrow.svg" alt="">
+        <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt praesentium, quibusdam blanditiis eius corrupti similique inventore."</p>
+        <div>
+            <span></span>
+            <h3>Agustina Palacios</h3>
+            <h4>Designer</h4>
+        </div>
+        <img class="right" src="/assets/testimonials__rightArrow.svg" alt="">
+    </article>
+</section>
+
+<style>
+    h2 {
+        text-align: center;
+        font-size: var(--fs__20);
+        font-weight: var(--fw__medium);
+    }
+
+    article {
+        border: 2px solid var(--clr__ultra__black);
+        border-radius: 2.5rem;
+
+        padding: 3.5rem 1rem;
+        position: relative;
+    }
+
+    span {
+        width: 64px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: gray;
+        margin-inline: auto;
+    }
+
+    article {
+        margin-top: 2rem;
+    }
+
+    h3 {
+        color: var(--clr__primary__purple);
+        letter-spacing: -1px;
+        font-size: var(--fs__20);
+        font-weight: var(--fw__medium);
+        margin-block: .2rem;
+    }
+
+    h4 {
+        color: var(--clr__gray);
+        letter-spacing: -1px;
+        font-size: var(--fs__20);
+        font-weight: var(--fw__regular);
+    }
+
+    :is(p, h3, h4) {
+        text-align: center;
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .right {
+        right: 1rem;
+    }
+</style>
