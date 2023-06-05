@@ -1,14 +1,20 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Card from "../components/card/Card.astro";
+import ProjectsLayout from "../layouts/ProjectsLayout.astro";
+import ProjectsContainer from "../components/ProjectsContainer.astro";
 ---
 
-<MainLayout title="Facundo Solé - Projects">
-    <Card
-        src="/assets/plumaDePapel.webp"
-        title="E-commerce"
-        tags="React, CSS, Firebase"
-        desc="With firebase as backend data base, full flow fromsearching to checkout."
-        link="https://pluma-de-papel.vercel.app"
-    />
-</MainLayout>
+<ProjectsLayout title="Facundo Solé - Projects">
+    <main>
+        <h2>Selected projects</h2>
+        <ProjectsContainer />
+    </main>
+</ProjectsLayout>
+
+<style>
+    h2 {
+        font-size: var(--fs__20);
+        font-weight: var(--fw__medium);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+</style>
