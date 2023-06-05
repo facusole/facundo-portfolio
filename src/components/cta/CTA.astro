@@ -13,11 +13,11 @@ const { cta } = Astro.props
         border: transparent;
         border-radius: 100vh;
 
-        box-shadow: 3px 3px 0px 1px rgba(0,0,0,1);
         transition: .2s linear;
     }
 
     button:is(:hover, :focus-within) {
         scale: 1.02;
+        box-shadow: 3px 3px 0px 1px rgba(0,0,0,1);
     }
 </style>
