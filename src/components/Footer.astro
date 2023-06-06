@@ -14,14 +14,20 @@
         </li>
     </ul>
     <div>
-        <button>
+        <a class="backTo__top" href="#">
             <img
                 src="/assets/footer__upArrow.svg"
                 alt="Arrow pointing upwards to go to the top of the site when you click on it"
             />
-        </button>
+        </a>
     </div>
 </footer>
+<script>
+    const backToTop = document.querySelector('.backTo__top')
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+</script>
+
 <style>
     footer {
         background-color: var(--clr__black2);
@@ -69,20 +75,23 @@
         text-align: center;
     }
 
-    button {
+    .backTo__top {
         background: none;
         cursor: pointer;
         border: transparent;
         text-align: center;
-        transition: 0.2s ease-in;
     }
 
-    button img {
+    .backTo__top img {
         width: 4rem;
-        aspect-ratio: 1/1;
+        aspect-ratio: 1;
+        margin-inline: auto;
+        transition: scale 0.2s ease-in;
+
     }
 
-    button:is(:hover, :focus-within) {
+    .backTo__top img:is(:hover, :focus-within) {
         scale: 1.04;
     }
 </style>
+
