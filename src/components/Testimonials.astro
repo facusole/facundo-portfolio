@@ -1,14 +1,15 @@
 <section>
     <h2>Some testimonials</h2>
     <article>
-        <img src="/assets/testimonials__leftArrow.svg" alt="">
-        <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt praesentium, quibusdam blanditiis eius corrupti similique inventore."</p>
+        <p>"Facundo was always ready and motivated implementing the design. Communication was smooth, being able to replicate the proposed design on Figma, demonstrating his skills.
+            I think he has a lot of talent to exploit and keep growing. He is an excellent person and professional!"</p>
         <div>
-            <span></span>
-            <h3>Agustina Palacios</h3>
+            <img class="people" src="/assets/people/Camila Russo.avif" alt="">
+            <h3><a href="https://www.linkedin.com/in/russocamila/">Camila Russo</a></h3>
             <h4>Designer</h4>
+            <img class="controls" src="/assets/testimonials__leftArrow.svg" alt="">
+            <img class="controls right" src="/assets/testimonials__rightArrow.svg" alt="">    
         </div>
-        <img class="right" src="/assets/testimonials__rightArrow.svg" alt="">
     </article>
 </section>
 
@@ -24,27 +25,37 @@
         border-radius: 2.5rem;
 
         padding: 3.5rem 1rem;
-        position: relative;
+        margin-top: 2rem;
+
     }
 
-    span {
-        width: 64px;
+
+    div {
+        margin-top: 2rem;
+        position: relative;
+    }
+    
+    .people {
+        width: 82px;
         aspect-ratio: 1;
+        outline: 2px solid var(--clr__primary__purple);
+        outline-offset: 3px;
         border-radius: 50%;
-        background-color: gray;
         margin-inline: auto;
     }
 
-    article {
-        margin-top: 2rem;
-    }
-
     h3 {
-        color: var(--clr__primary__purple);
         letter-spacing: -1px;
         font-size: var(--fs__20);
         font-weight: var(--fw__medium);
-        margin-block: .2rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    h3 a {
+        text-decoration: none;
+        color: var(--clr__primary__purple);
+
     }
 
     h4 {
@@ -54,17 +65,22 @@
         font-weight: var(--fw__regular);
     }
 
-    :is(p, h3, h4) {
+    :is(p, a, h4) {
         text-align: center;
     }
 
-    img {
+    .controls {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        transition: scale .2s linear;
+    }
+
+    .controls:is(:hover, :focus-within) {
+        scale: 1.03;
     }
 
     .right {
-        right: 1rem;
+        right: 0rem;
     }
 </style>
