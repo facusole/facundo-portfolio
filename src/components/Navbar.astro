@@ -7,6 +7,13 @@ import CTA from "./cta/CTA.astro";
     <button class="menu__container">
         <img src="/assets/purple__burgerMenu.svg" alt="Expandable burger menu icon to access the navbar links.">
     </button>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/about-me">About me</a></li>
+        <li><a href="https://github.com/facusole">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/facundo-sole/">Linkedin</a></li>
+    </ul>
     <CTA cta='Work with me' />
 </nav>
 
@@ -37,4 +44,31 @@ import CTA from "./cta/CTA.astro";
         scale: 1.02;
         box-shadow: 2px 2px 0px 1px rgba(0,0,0,1);
     }
+
+    ul {
+        display: none;
+    }
+
+
+    @media (min-width: 768px) {
+        .menu__container {
+            display: none;
+            background-color: red;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--clr__primary__purple);
+            font-size: var(--fs__18);
+            font-weight: var(--fw__medium);
+            padding: 1rem;
+        }
+    }
+
 </style>
