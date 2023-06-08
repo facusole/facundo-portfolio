@@ -7,13 +7,19 @@
             <img class="people" src="/assets/people/Camila Russo.avif" alt="">
             <h3><a href="https://www.linkedin.com/in/russocamila/">Camila Russo</a></h3>
             <h4>Designer</h4>
-            <img class="controls" src="/assets/testimonials__leftArrow.svg" alt="">
+            <img class="controls left" src="/assets/testimonials__leftArrow.svg" alt="">
             <img class="controls right" src="/assets/testimonials__rightArrow.svg" alt="">    
         </div>
     </article>
 </section>
 
 <style>
+
+    p {
+        font-size: var(--fs__18);
+        font-weight: var(--fw__medium);
+    }
+
     h2 {
         text-align: center;
         font-size: var(--fs__20);
@@ -82,5 +88,29 @@
 
     .right {
         right: 0rem;
+    }
+
+    @media (min-width: 768px) {
+
+        p {
+            font-size: var(--fs__24);
+        }
+
+        h3 {
+            font-size: var(--fs__28);
+        }
+
+        .controls {
+            width: 4rem;
+            aspect-ratio: 1;
+        }
+
+        .left {
+            left: 1rem;
+        }
+
+        .right {
+            right: 1rem;
+        }
     }
 </style>
