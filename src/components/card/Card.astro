@@ -10,14 +10,8 @@ import TagLabel from "../tagLabel/TagLabel.astro";
     </span>
     <h3>{title}</h3>
     <p>{desc}</p>
-    <a href={link} target="_blank" rel="noreferrer noopener">
-        <span class="view__project">View live project</span><span
-            class="view__project"
-            ><img
-                src="/assets/card__rightArrow.svg"
-                alt="Right arrow indicating that is an external link and you will be redirected"
-            /></span
-        >
+    <a class="mobile__link" href={link} target="_blank" rel="noreferrer noopener">
+        <span class="view__project">View live project</span><span class="view__project"><img src="/assets/card__rightArrow.svg" alt="Right arrow indicating that is an external link and you will be redirected"/></span>
     </a>
 </article>
 
@@ -37,14 +31,21 @@ import TagLabel from "../tagLabel/TagLabel.astro";
         scroll-snap-align: start;
     }
 
-    article:is(:hover, :focus-within) {
-        border: solid 2px var(--clr__primary__purple);
+    h3 {
+        font-size: var(--fs__24);
+        font-weight: var(--fw__medium);
+    }
+
+    p {
+        font-size: var(--fs__18);
+        font-weight: var(--fw__regular);
     }
 
     a {
         display: flex;
         align-items: center;
         text-decoration: none;
+        transition: all .2s linear;
     }
 
     .view__project {
@@ -61,5 +62,17 @@ import TagLabel from "../tagLabel/TagLabel.astro";
     a img {
         width: 1.5rem;
         aspect-ratio: 1/1;
+    }
+
+    @media (min-width: 768px) {
+        .view__project {
+            font-size: var(--fs__18);
+            font-weight: var(--fw__semibold);
+        }
+
+        a:is(:hover, :focus-within) {
+            scale: 1.01;
+            translate: 1rem;
+        }
     }
 </style>
