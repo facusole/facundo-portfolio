@@ -23,6 +23,8 @@ const { src, alt, skill, description } = Astro.props;
 
         display: grid;
         gap: 2rem;
+
+        scroll-snap-align: start;
     }
 
     h3 {
@@ -34,5 +36,15 @@ const { src, alt, skill, description } = Astro.props;
         font-size: var(--fs__16);
         font-weight: var(--fw__regular);
         width: 25ch;
+    }
+
+    @media (min-width: 768px) {
+        h3 {
+            font-size: var(--fs__24);
+        }
+
+        p {
+            font-size: var(--fs__20);
+        }
     }
 </style>
