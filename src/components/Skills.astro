@@ -4,7 +4,7 @@ import SmallCard from "./smallCard/SmallCard.astro";
 
 <section>
     <h2>How can I help?</h2>
-    <article>
+    <div class="skills__container">
         <SmallCard
             src="/assets/abilities__square.svg"
             alt="square icon with nodes that represents a website being built"
@@ -23,7 +23,7 @@ import SmallCard from "./smallCard/SmallCard.astro";
             skill="Websites from scratch"
             description="With firebase as backend data base,full flow from searching to checkout."
         />
-    </article>
+    </div>
 </section>
 
 <style>
@@ -41,9 +41,31 @@ import SmallCard from "./smallCard/SmallCard.astro";
         text-align: center;
     }
 
-    article {
+    .skills__container {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+
+        h2 {
+            font-size: var(--fs__28);
+        }
+
+        .skills__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+
+            scrollbar-width: none;
+        }
+
+        .skills__container::-webkit-scrollbar {
+            display: none;
+        }
     }
 </style>
