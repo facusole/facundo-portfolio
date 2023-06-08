@@ -5,9 +5,7 @@ import CTA from "./cta/CTA.astro";
 <section id="contact">
     <h3>Let's collaborate together!</h3>
     <h2>facundojsole@gmail.com</h2>
-    <span>
-        <CTA cta='Copy email' />
-    </span>
+    <span><button>Copy email</button></span>
 </section>
 
 <style>
@@ -36,6 +34,41 @@ import CTA from "./cta/CTA.astro";
     h3 {
         font-size: var(--fs__18);
         font-weight: var(--fw__regular);
+    }
+
+    button {
+        background: var(--clr__white);
+        cursor: pointer;
+
+        padding: .5rem 1rem;
+        border: 1px solid var(--clr__ultra__black);
+        border-radius: 100vh;
+
+        transition: .2s linear;
+    }
+
+    button:is(:hover, :focus-within) {
+        scale: 1.02;
+        box-shadow: 3px 3px 0px 1px rgba(0,0,0,1);
+    }
+
+    @media (min-width: 768px) {
+        h2 {
+            font-size: var(--fs__48);
+        }
+
+        h3 {
+            font-size: var(--fs__28);
+        }
+
+        span {
+            font-size: var(--fs__20);
+            font-weight: var(--fw__medium);
+        }
+
+        button {
+            padding: .75rem 2.5rem;
+        }
     }
 
 </style>
