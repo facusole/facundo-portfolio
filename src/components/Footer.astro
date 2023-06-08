@@ -93,5 +93,26 @@
     .backTo__top img:is(:hover, :focus-within) {
         scale: 1.04;
     }
+
+    @media (min-width: 768px) {
+        footer,
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        footer {
+            padding: 1rem 3rem;
+        }
+
+        ul {
+            gap: .5rem;
+        }
+
+        li {
+            margin: 0;
+        }
+    }
 </style>
 
