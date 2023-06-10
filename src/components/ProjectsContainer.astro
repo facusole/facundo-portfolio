@@ -1,6 +1,5 @@
 ---
 import Card from "./card/Card.astro";
-
 ---
 
 <section>
@@ -62,5 +61,13 @@ import Card from "./card/Card.astro";
 
     section::-webkit-scrollbar {
         display: none;
+    }
+
+    @media (min-width: 768px) {
+        section {
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+            gap: 2rem;
+        }
     }
 </style>
