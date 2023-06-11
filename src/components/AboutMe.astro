@@ -1,27 +1,45 @@
 <section>
     <div>
-        <h1>I'm Facu, <br> 
-        <span>I love<img class="misc" src="/assets/hero__misc.svg" alt="" /></span> building websites</h1>
+        <h1>
+            I'm Facu, <br />
+            <span
+                >I love<img
+                    class="misc"
+                    src="/assets/hero__misc.svg"
+                    alt=""
+                /></span
+            > building websites
+        </h1>
         <picture>
             <source
                 srcset="/assets/me__Tablet.avif"
                 media="(min-width: 768px)"
             />
-            <img src="/assets/me__Mobile.avif" alt="">
+            <img src="/assets/me__Mobile.avif" alt="" />
         </picture>
     </div>
 
     <article>
         <h2>Front-end developer</h2>
-        <p>I've have experience working as a freelance front-end developer. Nowadays, I'm looking for a full time opportunity while working as a freelancer.</p>
-        <p>I've have experience working as a freelance front-end developer. Nowadays, I'm looking for a full time opportunity while working as a freelancer.</p>
-        <p>I've have experience working as a freelance front-end developer. Nowadays, I'm looking for a full time opportunity while working as a freelancer.</p>
+        <p>
+            I've have experience working as a freelance front-end developer.
+            Nowadays, I'm looking for a full time opportunity while working as a
+            freelancer.
+        </p>
+        <p>
+            I've have experience working as a freelance front-end developer.
+            Nowadays, I'm looking for a full time opportunity while working as a
+            freelancer.
+        </p>
+        <p>
+            I've have experience working as a freelance front-end developer.
+            Nowadays, I'm looking for a full time opportunity while working as a
+            freelancer.
+        </p>
     </article>
-
 </section>
 
 <style>
-
     section {
         margin-block: 2rem;
     }
@@ -62,5 +80,24 @@
         position: absolute;
         bottom: -7px;
         right: 0;
+    }
+
+    @media (min-width: 768px) {
+        section {
+            margin-block: 5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        article {
+            margin-top: 0;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
     }
 </style>
