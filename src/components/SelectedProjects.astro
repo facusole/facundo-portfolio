@@ -79,6 +79,7 @@ import Card from "./card/Card.astro";
         align-items: center;
         margin-top: 2rem;
 
+        font-size: var(--fs__16);
         text-decoration: none;
         transition: all .2s linear;
     }
@@ -100,6 +101,10 @@ import Card from "./card/Card.astro";
     }
 
     @media (min-width: 768px) {
+
+        a {
+            font-size: var(--fs__18);
+        }
         a:is(:hover, :focus-within) {
             scale: 1.02;
             translate: 1rem;
@@ -111,6 +116,10 @@ import Card from "./card/Card.astro";
     }
 
     @media (min-width: 1024px) {
+
+        a {
+            font-size: var(--fs__20);
+        }
         h2 {
             font-size: var(--fs__40);
         }
