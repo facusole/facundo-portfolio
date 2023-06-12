@@ -15,6 +15,10 @@
 
 <style>
 
+    section {
+        margin-block: 3rem;
+    }
+
     p {
         font-size: var(--fs__18);
         font-weight: var(--fw__medium);
@@ -92,8 +96,57 @@
 
     @media (min-width: 768px) {
 
+        section {
+            margin-block: 4rem;
+        }
+
+        article {
+            margin-top: 3rem;
+        }
+
+        h2 {
+            font-size: var(--fs__28);
+        }
+
         p {
             font-size: var(--fs__24);
+        }
+
+        h3 {
+            font-size: var(--fs__28);
+        }
+
+        .controls {
+            width: 4rem;
+            aspect-ratio: 1;
+        }
+
+        .left {
+            left: 1rem;
+        }
+
+        .right {
+            right: 1rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        section {
+            margin-block: 10rem 4rem;
+        }
+
+        article {
+            padding: 3.5rem 15rem;
+            margin-top: 4rem;
+        }
+
+        h2 {
+            font-size: var(--fs__40);
+        }
+
+        p {
+            font-size: var(--fs__28);
         }
 
         h3 {
