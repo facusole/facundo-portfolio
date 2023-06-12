@@ -21,6 +21,7 @@ import TagLabel from "../tagLabel/TagLabel.astro";
         border: solid 2px var(--clr__ultra__black);
         border-radius: 2rem;
         padding: 2rem 1.5rem;
+        scroll-snap-align: start;
 
         display: flex;
         flex-direction: column;
@@ -64,6 +65,23 @@ import TagLabel from "../tagLabel/TagLabel.astro";
     }
 
     @media (min-width: 768px) {
+        .view__project {
+            font-size: var(--fs__18);
+            font-weight: var(--fw__semibold);
+        }
+
+        a:is(:hover, :focus-within) {
+            scale: 1.01;
+            translate: 1rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        article {
+            width: 24rem;
+        }
+
         .view__project {
             font-size: var(--fs__18);
             font-weight: var(--fw__semibold);
