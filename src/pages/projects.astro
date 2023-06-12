@@ -11,6 +11,10 @@ import ProjectsContainer from "../components/ProjectsContainer.astro";
 </ProjectsLayout>
 
 <style>
+
+    main {
+        margin-block: 2.5rem;
+    }
     h2 {
         font-size: var(--fs__20);
         font-weight: var(--fw__medium);
@@ -25,6 +29,11 @@ import ProjectsContainer from "../components/ProjectsContainer.astro";
     }
 
     @media (min-width: 1024px) {
+
+        main {
+            margin-block: 5rem;
+        }
+
         h2 {
             font-size: var(--fs__40);
         }
