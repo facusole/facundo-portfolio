@@ -33,6 +33,12 @@ import Card from "./card/Card.astro";
             desc="With firebase as backend data base, full flow fromsearching to checkout."
             link="https://pluma-de-papel.vercel.app"
         />
+        
+    </div>
+    <div class="projects__page">
+        <a href="/projects">
+           <span class="view__project">View all projects</span><span class="view__project"><img src="/assets/card__rightArrow.svg" alt="Right arrow indicating that is an external link andyou will be redirected"/></span>
+        </a>
     </div>
 </section>
 
@@ -63,9 +69,50 @@ import Card from "./card/Card.astro";
         display: none;
     }
 
+    .projects__page {
+        display: flex;
+        justify-content: end;
+    }
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 2rem;
+
+        text-decoration: none;
+        transition: all .2s linear;
+    }
+
+    .view__project {
+        color: var(--clr__primary__purple);
+        font-weight: var(--fw__semibold);
+
+        background: var(--clr__secondary__purple);
+        border: solid 1px var(--clr__primary__purple);
+        border-radius: 100vh;
+
+        padding: 0.5rem 1rem;
+    }
+
+    a img {
+        width: 1.5rem;
+        aspect-ratio: 1/1;
+    }
+
     @media (min-width: 768px) {
+        a:is(:hover, :focus-within) {
+            scale: 1.02;
+            translate: 1rem;
+        }
+
         h2 {
             font-size: var(--fs__28);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        h2 {
+            font-size: var(--fs__40);
         }
     }
 </style>
