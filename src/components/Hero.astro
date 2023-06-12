@@ -6,7 +6,7 @@
         > code
     </h1>
     <div>
-        <img src="/assets/hero__bottomArrow.svg" alt="" />
+        <img class="arrow" src="/assets/hero__bottomArrow.svg" alt="" />
         <small>Scroll down</small>
     </div>
 </section>
@@ -70,6 +70,17 @@
         }
         small {
             font-size: var(--fs__18);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        h1 {
+            font-size: var(--fs__64);
+
+        }
+        .arrow {
+            width: 74px;
+            aspect-ratio: 1;
         }
     }
 </style>
