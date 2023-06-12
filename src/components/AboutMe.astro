@@ -110,7 +110,41 @@
         }
 
         p {
-            font-style: var(--fs__20);
+            font-size: var(--fs__20);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        section {
+            margin-block: 6.5rem;
+            display: grid;
+            grid-template-columns: minmax(300px, 500px) 1fr;
+            gap: 0;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: var(--fs__64);
+        }
+
+        article {
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: var(--fs__48);
+        }
+
+        p {
+            font-size: var(--fs__20);
+            margin-block: 2rem;
         }
     }
 </style>
