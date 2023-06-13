@@ -2,12 +2,14 @@
 const { cta } = Astro.props
 ---
 
-<button>{cta}</button>
+<a href="mailto:facundojsole@gmail.com">{cta}</a>
 
 <style>
-    button {
+    a {
         background: var(--clr__white);
         cursor: pointer;
+        text-decoration: none;
+        color: var(--clr__black1);
 
         padding: .5rem 1rem;
         border: 1px solid var(--clr__ultra__black);
@@ -16,14 +18,14 @@ const { cta } = Astro.props
         transition: .2s linear;
     }
 
-    button:is(:hover, :focus-within) {
+    a:is(:hover, :focus-within) {
         scale: 1.02;
         box-shadow: 3px 3px 0px 1px rgba(0,0,0,1);
     }
 
     @media (min-width: 1024px) {
         
-        button {
+        a {
             padding: .5rem 2.5rem;
         }
 
