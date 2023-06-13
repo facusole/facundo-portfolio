@@ -8,11 +8,11 @@ import CTA from "./cta/CTA.astro";
         <img src="/assets/purple__burgerMenu.svg" alt="Expandable burger menu icon to access the navbar links.">
     </button>
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/about-me">About me</a></li>
-        <li><a href="https://github.com/facusole">Github</a></li>
-        <li><a href="https://www.linkedin.com/in/facundo-sole/">Linkedin</a></li>
+        <li><a href="/"><span>Home</span></a></li>
+        <li><a href="/projects"><span>Projects</span></a></li>
+        <li><a href="/about-me"><span>About me</span></a></li>
+        <li><a href="https://github.com/facusole"><span>Github</span></a></li>
+        <li><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
     </ul>
     <CTA cta='Work with me' />
 </nav>
@@ -70,6 +70,26 @@ import CTA from "./cta/CTA.astro";
             font-size: var(--fs__18);
             font-weight: var(--fw__medium);
             padding: 1rem;
+        }
+
+        span {
+            position: relative;
+        }
+
+        a:is(:hover, :focus-within) span::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom:-2px;
+            height: 2px;
+            width: 100%;
+            background-color: var(--clr__primary__purple);
+            animation: hoverEffect .2s linear;
+        }
+
+        @keyframes hoverEffect {
+            from {width: 0;}
+            to {widows: 100%;}
         }
     }
 
