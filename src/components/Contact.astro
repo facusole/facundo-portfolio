@@ -1,11 +1,22 @@
----
-import CTA from "./cta/CTA.astro";
----
+<script>
+    const btn = document.querySelector('.copyInteraction')
+    const mail = 'facundojsole@gmail.com'
+
+    btn.addEventListener('click', () => {
+
+        btn.innerHTML = 'Copied!'
+        navigator.clipboard.writeText(mail)
+        
+        setTimeout(() => {
+            btn.innerHTML = 'Copy email' 
+        }, 2500)
+    })
+</script>
 
 <section id="contact">
     <h3>Let's collaborate together!</h3>
     <h2>facundojsole@gmail.com</h2>
-    <span><button>Copy email</button></span>
+    <span><button class="copyInteraction">Copy email</button></span>
 </section>
 
 <style>
