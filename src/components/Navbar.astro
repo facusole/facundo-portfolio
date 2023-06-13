@@ -6,8 +6,15 @@ import CTA from "./cta/CTA.astro";
 <nav>
     <button class="menu__container">
         <img src="/assets/purple__burgerMenu.svg" alt="Expandable burger menu icon to access the navbar links.">
+        <ul id="menu__links" class="closed">
+            <li><a href="/"><span>Home</span></a></li>
+            <li><a href="/projects"><span>Projects</span></a></li>
+            <li><a href="/about-me"><span>About me</span></a></li>
+            <li><a href="https://github.com/facusole"><span>Github</span></a></li>
+            <li><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
+        </ul>
     </button>
-    <ul>
+    <ul class="desktop">
         <li><a href="/"><span>Home</span></a></li>
         <li><a href="/projects"><span>Projects</span></a></li>
         <li><a href="/about-me"><span>About me</span></a></li>
@@ -16,6 +23,15 @@ import CTA from "./cta/CTA.astro";
     </ul>
     <CTA cta='Work with me' />
 </nav>
+
+<script>
+    const menu = document.querySelector('.menu__container')
+    const ul = document.querySelector('#menu__links')
+
+    menu.addEventListener('click', () => {
+        ul.classList.toggle('active')
+    })
+</script>
 
 <style>
     nav {
@@ -29,6 +45,7 @@ import CTA from "./cta/CTA.astro";
         padding: .5rem 1rem;
 
         font-weight: var(--fw__medium);
+        position: relative;
     }
 
     .menu__container {
@@ -42,23 +59,41 @@ import CTA from "./cta/CTA.astro";
         transition: .2s linear;
     }
 
-    .menu__container:is(:hover, :focus-within) {
-        scale: 1.02;
-        box-shadow: 2px 2px 0px 1px rgba(0,0,0,1);
-    }
-
-    ul {
+    button ul {
         display: none;
     }
 
+    .active {
+        display: grid;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        list-style: none;
+        position: absolute;
+        z-index: 50;
+        top: 4rem;
+        left: 0;
+        background-color: var(--clr__secondary__purple);
+        border-radius: 2rem;
+    }
+
+    .active a {
+        text-decoration: none;
+        color: var(--clr__primary__purple);
+        font-size: var(--fs__16);
+        width: 20ch;
+    }
+
+    .desktop {
+        display: none;
+    }
 
     @media (min-width: 768px) {
         .menu__container {
             display: none;
-            background-color: red;
         }
 
-        ul {
+        .desktop {
+            position: relative;
             display: flex;
             list-style: none;
             padding: 0;
