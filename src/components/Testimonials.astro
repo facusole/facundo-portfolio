@@ -1,16 +1,11 @@
+---
+import Testimony from './testimony/Testimony.astro'
+---
+
+
 <section>
     <h2>Some testimonials</h2>
-    <article>
-        <p>"Facundo was always ready and motivated implementing the design. Communication was smooth, being able to replicate the proposed design on Figma, demonstrating his skills.
-            I think he has a lot of talent to exploit and keep growing. He is an excellent person and professional!"</p>
-        <div>
-            <img class="people" src="/assets/people/Camila Russo.avif" alt="">
-            <h3><a href="https://www.linkedin.com/in/russocamila/">Camila Russo</a></h3>
-            <h4>Designer</h4>
-            <img class="controls left" src="/assets/testimonials__leftArrow.svg" alt="">
-            <img class="controls right" src="/assets/testimonials__rightArrow.svg" alt="">    
-        </div>
-    </article>
+    <Testimony testimony="Facundo was always ready and motivated implementing the design. Communication was smooth, being able to replicate the proposed design on Figma, demonstrating his skills. I think he has a lot of talent to exploit and keep growing. He is an excellent person and professional!" src="/assets/people/Camila Russo.avif" alt="Designer from The Design Project, she helped me a lot redesigning my website and designing some of my projects such as the Pokedex or the password generator" name="Camila Russo" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Designer" />
 </section>
 
 <style>
