@@ -6,16 +6,16 @@ import CTA from "./cta/CTA.astro";
 <nav class="section">
     <div class="menu">
             <ul>
-                <svg class="menu__links" width="50" height="50" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="hide" width="50" height="50" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M9.16998 14.83L14.83 9.17004" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M14.83 14.83L9.16998 9.17004" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <li class="menu__links"><a href="/"><span>Home</span></a></li>
-                <li class="menu__links"><a href="/projects"><span>Projects</span></a></li>
-                <li class="menu__links"><a href="/about-me"><span>About me</span></a></li>
-                <li class="menu__links"><a href="https://github.com/facusole"><span>Github</span></a></li>
-                <li class="menu__links"><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
+                <li class="hide"><a href="/"><span>Home</span></a></li>
+                <li class="hide"><a href="/projects"><span>Projects</span></a></li>
+                <li class="hide"><a href="/about-me"><span>About me</span></a></li>
+                <li class="hide"><a href="https://github.com/facusole"><span>Github</span></a></li>
+                <li class="hide"><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
             </ul>
         </div>
     <button class="menu__container">
@@ -56,15 +56,15 @@ import CTA from "./cta/CTA.astro";
     const observerMenu = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			if(entry.isIntersecting) {
-				entry.target.classList.add('fade__menu__links')
+				entry.target.classList.add('show')
 			} else {
-				entry.target.classList.remove('fade__menu__links')
+				entry.target.classList.remove('show')
             }
 		})
 	})
 
 	const section = document.querySelectorAll('.section')
-    const menuLinks = document.querySelectorAll('.menu__links')
+    const menuLinks = document.querySelectorAll('.hide')
 
 	section.forEach((el) => observer.observe(el))
 	menuLinks.forEach((el) => observerMenu.observe(el))
@@ -201,11 +201,32 @@ import CTA from "./cta/CTA.astro";
 
       /* ------------------- FADE-IN ANIMATION ----------------- */
 
-  .fade__menu__links {
-		animation: fade-links 1s ease;
+    .hide {
+		opacity: 0;
+        transition: all 1s;
 	}
 
-	@keyframes fade-links {
+    .show {
+        opacity: 1;
+    }
+
+    .menu ul li:nth-child(2) {
+        transition-delay: 100ms;
+    }
+    .menu ul li:nth-child(3) {
+        transition-delay: 200ms;
+    }
+    .menu ul li:nth-child(4) {
+        transition-delay: 300ms;
+    }
+    .menu ul li:nth-child(5) {
+        transition-delay: 400ms;
+    }
+    .menu ul li:nth-child(6) {
+        transition-delay: 500ms;
+    }
+
+	/* @keyframes fade-links {
 		from {
 			opacity: 0;
 			transform: translateY(30px) scale(0.9);
@@ -215,7 +236,7 @@ import CTA from "./cta/CTA.astro";
 			opacity: 1;
 			transform: translateY(0) scale(1);
 		}
-	}
+	} */
 
 
 </style>
