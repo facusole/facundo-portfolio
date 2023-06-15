@@ -2570,15 +2570,6 @@ packages:
       suf-log: 2.5.3
     dev: false
 
-  /scrollreveal@4.0.9:
-    resolution: {integrity: sha512-fefGvzVS8YbXbDK1+T0kvy2yqxaiBJZeGUhPeqajf+7sGqtX4xikbKGAlzQuPCpswAMswx94ZwhDjXKnRIqW1w==}
-    requiresBuild: true
-    dependencies:
-      miniraf: 1.0.0
-      rematrix: 0.3.0
-      tealight: 0.3.6
-    dev: false
-
   /section-matter@1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
     engines: {node: '>=4'}
