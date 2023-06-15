@@ -3,7 +3,7 @@ import CTA from "./cta/CTA.astro";
 
 ---
 
-<nav>
+<nav class="section">
     <div class="menu">
             <ul id="menu__links">
                 <svg width="50" height="50" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,6 +45,17 @@ import CTA from "./cta/CTA.astro";
         menu.classList.toggle('active')
     })
 
+    const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if(entry.isIntersecting) {
+				entry.target.classList.add('fade__animation')
+			}
+		})
+	})
+
+	const section = document.querySelectorAll('.section')
+
+	section.forEach((el) => observer.observe(el))
 </script>
 
 <style>
@@ -82,7 +93,7 @@ import CTA from "./cta/CTA.astro";
         z-index: 50;
 
         transition: .6s linear;
-        transform: translateY(-100dvh);
+        transform: translateY(-150dvh);
     }
 
     .active {

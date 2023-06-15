@@ -5,11 +5,19 @@ import Skills from "../components/Skills.astro";
 ---
 
 <MainLayout title="Facundo Solé - About Me!">
-	<main>
+	<main class="section">
         <AboutMeHero />
 		<Skills />
 	</main>
 </MainLayout>
 
-<style>
-</style>
+<script>
+    const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			console.log(entry)
+			if(entry.isIntersecting) {
+				entry.target.classList.add('fade__animation')
+			}
+		})
+	})
+</script>

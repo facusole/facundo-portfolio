@@ -1,4 +1,4 @@
-<section>
+<section class="section">
     <div>
         <h1>
             I'm Facu, <br />
@@ -38,6 +38,20 @@
         </p>
     </article>
 </section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+              if(entry.isIntersecting) {
+                  entry.target.classList.add('fade__animation')
+              }
+          })
+      })
+  
+      const section = document.querySelectorAll('.section')
+  
+      section.forEach((el) => observer.observe(el))
+  </script>
 
 <style>
     section {

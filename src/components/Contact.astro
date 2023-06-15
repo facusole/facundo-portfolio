@@ -11,9 +11,21 @@
             btn.innerHTML = 'Copy email' 
         }, 2500)
     })
+
+    const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if(entry.isIntersecting) {
+				entry.target.classList.add('fade__animation')
+			}
+		})
+	})
+
+	const section = document.querySelectorAll('.section')
+
+	section.forEach((el) => observer.observe(el))
 </script>
 
-<section id="contact">
+<section class="section" id="contact">
     <h3>Let's collaborate together!</h3>
     <h2>facundojsole@gmail.com</h2>
     <span><button class="copyInteraction">Copy email</button></span>

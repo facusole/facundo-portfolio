@@ -1,4 +1,4 @@
-<footer>
+<footer class="section">
     <ul>
         <li>
             <a href="/projects" rel="noopener noreferrer">Projects</a>
@@ -26,6 +26,18 @@
     const backToTop = document.querySelector('.backTo__top')
 
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+
+    const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if(entry.isIntersecting) {
+				entry.target.classList.add('fade__animation')
+			}
+		})
+	})
+
+	const section = document.querySelectorAll('.section')
+
+	section.forEach((el) => observer.observe(el))
 </script>
 
 <style>

@@ -1,4 +1,4 @@
-<section>
+<section class="section">
     <h1>
         Front-end developer <br />
         who strives for <span
@@ -10,6 +10,20 @@
         <small>Scroll down</small>
     </div>
 </section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+              if(entry.isIntersecting) {
+                  entry.target.classList.add('fade__animation')
+              }
+          })
+      })
+  
+      const section = document.querySelectorAll('.section')
+  
+      section.forEach((el) => observer.observe(el))
+  </script>
 
 <style>
     section {

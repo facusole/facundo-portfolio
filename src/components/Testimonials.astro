@@ -3,10 +3,24 @@ import Testimony from './testimony/Testimony.astro'
 ---
 
 
-<section>
+<section class="section">
     <h2>Some testimonials</h2>
     <Testimony testimony="Facundo was always ready and motivated implementing the design. Communication was smooth, being able to replicate the proposed design on Figma, demonstrating his skills. I think he has a lot of talent to exploit and keep growing. He is an excellent person and professional!" src="/assets/people/Camila Russo.avif" alt="Designer from The Design Project, she helped me a lot redesigning my website and designing some of my projects such as the Pokedex or the password generator" name="Camila Russo" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Designer" />
 </section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+              if(entry.isIntersecting) {
+                  entry.target.classList.add('fade__animation')
+              }
+          })
+      })
+  
+      const section = document.querySelectorAll('.section')
+  
+      section.forEach((el) => observer.observe(el))
+  </script>
 
 <style>
 

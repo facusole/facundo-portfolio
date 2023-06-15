@@ -4,11 +4,21 @@ import ProjectsContainer from "../components/ProjectsContainer.astro";
 ---
 
 <ProjectsLayout title="Facundo Solé - Projects">
-    <main>
+    <main class="section">
         <h2>Selected projects</h2>
         <ProjectsContainer />
     </main>
 </ProjectsLayout>
+
+<script>
+     const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if(entry.isIntersecting) {
+				entry.target.classList.add('fade__animation')
+			}
+		})
+	})
+</script>
 
 <style>
 
