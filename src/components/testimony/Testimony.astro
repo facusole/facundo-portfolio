@@ -4,12 +4,12 @@ const { testimony, src, alt, linkedinHref, name, role  } = Astro.props
 
 <article>
     <p>"{testimony}"</p>
-    <div>
+    <div class="wrapper">
         <img class="people" src={src} alt={alt}>
-        <h3><a href={linkedinHref}>{name}</a></h3>
-        <h4>{role}</h4>
-        <button class="controls left"><img src="/assets/testimonials__leftArrow.svg" alt=""></button>
-        <button class="controls right"><img src="/assets/testimonials__rightArrow.svg" alt="">  </button>  
+        <div class="info">
+            <h3><a href={linkedinHref}>{name}</a></h3>
+            <h4>{role}</h4>
+        </div>
     </div>
 </article>
 
@@ -22,35 +22,48 @@ const { testimony, src, alt, linkedinHref, name, role  } = Astro.props
 
 
     article {
+        margin-top: 3rem;
         border: 2px solid var(--clr__ultra__black);
         border-radius: 2.5rem;
 
-        padding: 3.5rem 1rem;
-        margin-top: 2rem;
+        padding: 2rem 1rem;
+
+        max-width: 400px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
     }
 
 
-    div {
+    .wrapper {
         margin-top: 2rem;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .info {
+        display: grid;
+        place-items: center;
+        margin-top: 0;
     }
     
     .people {
-        width: 82px;
+        width: 4rem;
         aspect-ratio: 1;
         outline: 2px solid var(--clr__primary__purple);
         outline-offset: 3px;
         border-radius: 50%;
-        margin-inline: auto;
     }
 
     h3 {
         letter-spacing: -1px;
         font-size: var(--fs__20);
         font-weight: var(--fw__medium);
-        margin-top: 1rem;
-        text-align: center;
     }
 
     h3 a {
@@ -66,35 +79,19 @@ const { testimony, src, alt, linkedinHref, name, role  } = Astro.props
         font-weight: var(--fw__regular);
     }
 
-    :is(p, a, h4) {
-        text-align: center;
-    }
-
-    .controls {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: scale .2s linear;
-        background-color: transparent;
-        border: transparent;
-        cursor: pointer;
-    }
-
-    .controls:is(:hover, :focus-within) {
-        scale: 1.03;
-    }
-
-    .right {
-        right: 0rem;
-    }
-
     @media (min-width: 768px) {
 
         article {
-            margin-top: 3rem;
+            padding: 3.5rem 3rem;
+
+            max-width: 600px;
+            height: 500px;
+
         }
 
-
+        .people {
+            width: 5rem;
+        }
         p {
             font-size: var(--fs__24);
         }
@@ -102,26 +99,18 @@ const { testimony, src, alt, linkedinHref, name, role  } = Astro.props
         h3 {
             font-size: var(--fs__28);
         }
-
-        .controls img {
-            width: 4rem;
-            aspect-ratio: 1;
-        }
-
-        .left {
-            left: 1rem;
-        }
-
-        .right {
-            right: 1rem;
-        }
     }
 
     @media (min-width: 1024px) {
 
         article {
-            padding: 3.5rem 15rem;
+            padding: 3.5rem 5rem;
             margin-top: 4rem;
+
+            max-width: 800px;
+            height: 550px;
+
+
         }
 
         p {
@@ -130,14 +119,6 @@ const { testimony, src, alt, linkedinHref, name, role  } = Astro.props
 
         h3 {
             font-size: var(--fs__28);
-        }
-
-        .left {
-            left: 1rem;
-        }
-
-        .right {
-            right: 1rem;
         }
     }
 </style>

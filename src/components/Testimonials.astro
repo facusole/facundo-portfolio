@@ -2,13 +2,33 @@
 import Testimony from './testimony/Testimony.astro'
 ---
 
-
 <section class="section">
-    <h2>Some testimonials</h2>
-    <Testimony testimony="Facundo was always ready and motivated implementing the design. Communication was smooth, being able to replicate the proposed design on Figma, demonstrating his skills. I think he has a lot of talent to exploit and keep growing. He is an excellent person and professional!" src="/assets/people/Camila Russo.avif" alt="Designer from The Design Project, she helped me a lot redesigning my website and designing some of my projects such as the Pokedex or the password generator" name="Camila Russo" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Designer" />
+    <h2>What those who have worked with me have to say</h2>
+    <!-- <div>
+        <span class="testimony__card" data-index="0" data-status="active">
+            <Testimony testimony="Facundo was always ready and motivated implementing the design. Communication was smooth, being able to replicate the proposed design on Figma, demonstrating his skills. I think he has a lot of talent to exploit and keep growing. He is an excellent person and professional!" src="/assets/people/Camila Russo.avif" alt="Designer from The Design Project, she helped me a lot redesigning my website and designing some of my projects such as the Pokedex or the password generator" name="Camila Russo" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Designer" />
+        </span>
+        <span class="testimony__card" data-index="1" data-status="unknown">
+            <Testimony testimony="Facundo was always ready and motivated implementing the design. Communication was smooth, being able to replicate the proposed design on Figma, demonstrating his skills. I think he has a lot of talent to exploit and keep growing. He is an excellent person and professional!" src="/assets/people/Camila Russo.avif" alt="Designer from The Design Project, she helped me a lot redesigning my website and designing some of my projects such as the Pokedex or the password generator" name="Camila Russo" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Prueba" />
+        </span>
+    </div> -->
+    <div class="marquee">
+        <div class="marquee__group">
+            <Testimony testimony="Facundo was always ready and motivated implementing the design. Communication was smooth, being able to replicate the proposed design on Figma, demonstrating his skills. I think he has a lot of talent to exploit and keep growing. He is an excellent person and professional!" src="/assets/people/Camila Russo.avif" alt="Designer from The Design Project, she helped me a lot redesigning my website and designing some of my projects such as the Pokedex or the password generator" name="Camila Russo" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Designer" />
+
+            <Testimony testimony="With Facundo, we understood each other from the very beginning for the development of our website. He knew how to align himself with our idea and execute it just as we expected. He handled everything in a very professional manner, meeting all the established deadlines. It was a pleasure working with him!" src="/assets/people/Camila Russo.avif" alt="Civil association from Argentina, who I worked for in the creation for their landing page" name="Grupo Tateti" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Civil Association" />
+        </div>
+        <div class="marquee__group">
+            <Testimony testimony="Working with Facundo as a colleague was a truly enriching experience. Despite being a relatively new professional and still in the learning process, his mastery of technologies like React and Tailwind was impressive. His enthusiasm and dedication to acquiring knowledge and constantly improving were evident from day one." src="/assets/people/Marcos Sequeira.webp" name="Marcos Sequeira" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Backend Developer" />
+
+            <Testimony testimony="Working with Facundo as a partner was a pleasure. From the start, he understood what we had to do and execute it really well. His professionalism and ability to meet all the set deadlines were commendable. I highly recommend Facundo for any web development project." src="/assets/people/Lucas Brest.webp" name="Lucas Brest" linkedinHref="https://www.linkedin.com/in/russocamila/" role="Frontend Developer" />
+        </div>
+      </div>
 </section>
 
-<script>
+<script>    
+    // observer
+
     const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
               if(entry.isIntersecting) {
@@ -24,83 +44,17 @@ import Testimony from './testimony/Testimony.astro'
 
 <style>
 
+    /* section styles */
+
     section {
         margin-block: 3rem;
     }
 
-    p {
-        font-size: var(--fs__18);
-        font-weight: var(--fw__regular);
-    }
-
     h2 {
         text-align: center;
+        text-wrap: balance;
         font-size: var(--fs__20);
         font-weight: var(--fw__medium);
-    }
-
-    article {
-        border: 2px solid var(--clr__ultra__black);
-        border-radius: 2.5rem;
-
-        padding: 3.5rem 1rem;
-        margin-top: 2rem;
-
-    }
-
-
-    div {
-        margin-top: 2rem;
-        position: relative;
-    }
-    
-    .people {
-        width: 82px;
-        aspect-ratio: 1;
-        outline: 2px solid var(--clr__primary__purple);
-        outline-offset: 3px;
-        border-radius: 50%;
-        margin-inline: auto;
-    }
-
-    h3 {
-        letter-spacing: -1px;
-        font-size: var(--fs__20);
-        font-weight: var(--fw__medium);
-        margin-top: 1rem;
-        text-align: center;
-    }
-
-    h3 a {
-        text-decoration: none;
-        color: var(--clr__primary__purple);
-
-    }
-
-    h4 {
-        color: var(--clr__gray);
-        letter-spacing: -1px;
-        font-size: var(--fs__20);
-        font-weight: var(--fw__regular);
-    }
-
-    :is(p, a, h4) {
-        text-align: center;
-    }
-
-    .controls {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: scale .2s linear;
-    }
-
-    .controls:is(:hover, :focus-within) {
-        scale: 1.03;
-    }
-
-    .right {
-        right: 0rem;
     }
 
     @media (min-width: 768px) {
@@ -109,33 +63,8 @@ import Testimony from './testimony/Testimony.astro'
             margin-block: 4rem;
         }
 
-        article {
-            margin-top: 3rem;
-        }
-
         h2 {
             font-size: var(--fs__28);
-        }
-
-        p {
-            font-size: var(--fs__24);
-        }
-
-        h3 {
-            font-size: var(--fs__28);
-        }
-
-        .controls {
-            width: 4rem;
-            aspect-ratio: 1;
-        }
-
-        .left {
-            left: 1rem;
-        }
-
-        .right {
-            right: 1rem;
         }
     }
 
@@ -145,34 +74,38 @@ import Testimony from './testimony/Testimony.astro'
             margin-block: 10rem 4rem;
         }
 
-        article {
-            padding: 3.5rem 15rem;
-            margin-top: 4rem;
-        }
-
         h2 {
             font-size: var(--fs__40);
         }
+    }
 
-        p {
-            font-size: var(--fs__28);
+        /* marquee animation */
+        .marquee {
+        --duration: 60s;
+        --gap: 2rem;
+
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: var(--gap);
+    }
+
+    .marquee__group {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: var(--gap);
+        animation: scroll var(--duration) linear infinite;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
         }
 
-        h3 {
-            font-size: var(--fs__28);
-        }
-
-        .controls {
-            width: 4rem;
-            aspect-ratio: 1;
-        }
-
-        .left {
-            left: 1rem;
-        }
-
-        .right {
-            right: 1rem;
+        100% {
+            transform: translateX(calc(-100% - var(--gap)));
         }
     }
 </style>
