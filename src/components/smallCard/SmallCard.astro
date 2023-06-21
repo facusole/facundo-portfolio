@@ -3,7 +3,7 @@ const { src, alt, skill, description } = Astro.props;
 ---
 
 <div>
-    <img src={src} alt={alt} />
+    <img src={src} alt={alt} loading="lazy"/>
     <article>
         <h3>{skill}</h3>
         <p>{description}</p>
