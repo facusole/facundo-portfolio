@@ -7,9 +7,9 @@ import CTA from "./cta/CTA.astro";
     <div class="menu">
             <ul>
                 <svg class="hide" width="50" height="50" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9.16998 14.83L14.83 9.17004" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M14.83 14.83L9.16998 9.17004" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#6e6e6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9.16998 14.83L14.83 9.17004" stroke="#6e6e6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.83 14.83L9.16998 9.17004" stroke="#6e6e6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <li class="hide"><a href="/"><span>Home</span></a></li>
                 <li class="hide"><a href="/projects"><span>Projects</span></a></li>
@@ -94,24 +94,26 @@ import CTA from "./cta/CTA.astro";
         cursor: pointer;
         padding: .5rem .75rem;
 
-        transition: .2s linear;
+        transition: transform .2s linear;
     }
 
     .menu {
-        display: none;
-    }
-
-    .active {
         display: block;
         position: fixed;
         inset: 0;
         min-height: 100dvh;
+        transform: translateY(-150vh);
+        transition: 1s;
 
-        background-color: var(--clr__secondary__purple);
+        background-color: var(--clr__ultra__black);
         z-index: 50;
     }
 
-    .active ul {
+    .active {
+        transform: none;
+    }
+
+    .menu ul {
         display: grid;
         place-content: center;
         gap: 5rem;
@@ -122,13 +124,13 @@ import CTA from "./cta/CTA.astro";
         text-align: center;
     }
 
-    .active li {
+    .menu li {
         width: min(20rem, 40rem);
     }
 
-    .active a {
+    .menu a {
         text-decoration: none;
-        color: var(--clr__primary__purple);
+        color: var(--clr__white);
         font-size: var(--fs__36);
         width: 20ch;
     }
