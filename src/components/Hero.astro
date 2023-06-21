@@ -2,7 +2,9 @@
     <h1>
         Front-end developer <br />
         who strives for <span
-            >clean<img class="misc" src="/assets/hero__misc.svg" alt="" /></span
+            >clean <svg class="misc" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="m 2 40 q 40 -11 75 -3" stroke="#5238F4" stroke-width="2.17925" stroke-linecap="round"/>
+            </svg></span
         > code
     </h1>
     <div>
@@ -37,16 +39,6 @@
         letter-spacing: -1px;
     }
 
-    span {
-        position: relative;
-    }
-
-    .misc {
-        position: absolute;
-        bottom: -7px;
-        right: 0;
-    }
-
     div {
         display: grid;
         place-content: center;
@@ -77,6 +69,32 @@
         }
     }
 
+    /* svg and svg animation */
+    span {
+            position: relative;
+        }
+
+    .misc {
+            position: absolute;
+            width: 95%;
+            height: auto;
+            bottom: -.75rem;
+            left: 0;
+            animation: fade-in 1.5s ease-in;
+        }
+    
+    @keyframes fade-in {
+        from { 
+                width: 0;
+                scale: 0;
+                opacity: 0; 
+        }
+        to {
+            width: 100%;
+            scale: 1;
+            opacity: 1;
+        }
+    }
     @media (min-width: 768px) {
 
         section {
@@ -91,6 +109,10 @@
         small {
             font-size: var(--fs__18);
         }
+
+        .misc {
+            bottom: -1.25rem;
+        }
     }
 
     @media (min-width: 1024px) {
@@ -101,6 +123,10 @@
 
         h1 {
             font-size: var(--fs__64);
+        }
+
+        .misc {
+            bottom: -1.75rem;
         }
         
         .arrow {
