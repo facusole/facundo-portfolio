@@ -1,6 +1,6 @@
 ---
 import CTA from "./cta/CTA.astro";
-
+const { activeHome, activeProjects, activeAbout} = Astro.props
 ---
 
 <nav class="section">
@@ -23,9 +23,9 @@ import CTA from "./cta/CTA.astro";
         
     </button>
     <ul class="desktop">
-        <li><a href="/"><span>Home</span></a></li>
-        <li><a href="/projects"><span>Projects</span></a></li>
-        <li><a href="/about-me"><span>About me</span></a></li>
+        <li><a class={activeHome} href="/"><span>Home</span></a></li>
+        <li><a class={activeProjects} href="/projects"><span>Projects</span></a></li>
+        <li><a class={activeAbout} href="/about-me"><span>About me</span></a></li>
         <li><a href="https://github.com/facusole"><span>Github</span></a></li>
         <li><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
     </ul>
@@ -72,6 +72,28 @@ import CTA from "./cta/CTA.astro";
 </script>
 
 <style>
+
+    .active {
+        position: relative;
+    }
+
+    .active::after {
+        content: '';
+        position: absolute;
+        bottom: .5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--clr__primary__purple);
+        transition: all .2s linear;
+    }
+
+    .active:is(:hover, :focus-within)::after {
+        display: none;
+    }
+
     nav {
         display: flex;
         flex-direction: row-reverse;
