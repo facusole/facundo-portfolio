@@ -20,6 +20,7 @@ const { src, alt, skill, description } = Astro.props;
         border: solid 2px var(--clr__ultra__black);
         border-radius: 2.5rem;
         padding: 2rem 1.5rem;
+        min-width: 300px;
 
         display: grid;
         gap: 2rem;
@@ -35,7 +36,7 @@ const { src, alt, skill, description } = Astro.props;
     p {
         font-size: var(--fs__16);
         font-weight: var(--fw__regular);
-        width: 25ch;
+        max-width: 50ch;
     }
 
     @media (min-width: 768px) {
@@ -49,6 +50,7 @@ const { src, alt, skill, description } = Astro.props;
     }
 
     @media (min-width: 1024px) {
+
         h3 {
             font-size: var(--fs__32);
         }
