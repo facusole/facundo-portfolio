@@ -2,13 +2,11 @@
     <div>
         <h1>
             I'm Facu, <br />
-            <span
-                >I love<img
-                    class="misc"
-                    src="/assets/hero__misc.svg"
-                    alt=""
-                /></span
-            > building websites
+            <span>I love
+                <svg class="misc" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m 2 40 q 40 -11 75 -3" stroke="#5238F4" stroke-width="2.17925" stroke-linecap="round"/>
+                </svg>
+                </span> building websites
         </h1>
         <picture>
             <source
@@ -92,10 +90,25 @@
     }
 
     .misc {
-        position: absolute;
-        z-index: 25;
-        bottom: -7px;
-        right: 0;
+            position: absolute;
+            width: 95%;
+            height: auto;
+            bottom: -.75rem;
+            left: 0;
+            animation: fade-in 1.5s ease-in;
+        }
+    
+    @keyframes fade-in {
+        from { 
+                width: 0;
+                scale: 0;
+                opacity: 0; 
+        }
+        to {
+            width: 100%;
+            scale: 1;
+            opacity: 1;
+        }
     }
 
     @media (min-width: 768px) {
@@ -127,6 +140,10 @@
 
         p {
             font-size: var(--fs__20);
+        }
+
+        .misc {
+            bottom: -1.25rem;
         }
     }
 
@@ -161,6 +178,10 @@
         p {
             font-size: var(--fs__20);
             margin-block: 2rem;
+        }
+
+        .misc {
+            bottom: -1.75rem;
         }
     }
 </style>
