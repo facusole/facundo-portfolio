@@ -145,7 +145,10 @@
         section {
             margin-block: 6.5rem;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            /* grid-template-columns: repeat(2, 1fr); */
+            grid-template-columns: minmax(300px, 500px) minmax(600px, 700px);
+            place-content: center;
+            gap: 0;
         }
 
         div {
