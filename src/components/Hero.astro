@@ -1,137 +1,146 @@
 <section class="section">
-    <h1>
-        Front-end developer <br />
-        who strives for <span
-            >clean <svg class="misc" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="m 2 40 q 40 -11 75 -3" stroke="#5238F4" stroke-width="2.17925" stroke-linecap="round"/>
-            </svg></span
-        > code
-    </h1>
-    <div>
-        <img class="arrow" src="/assets/hero__bottomArrow.svg" alt="Arrow icon to indicate that there is more content if you scroll down" />
-        <small>Scroll down</small>
-    </div>
+  <h1>
+    Front-end developer <br />
+    striving for <span
+      >clean <svg
+        class="misc"
+        viewBox="0 0 80 50"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m 2 40 q 40 -11 75 -3"
+          stroke="#5238F4"
+          stroke-width="2.17925"
+          stroke-linecap="round"></path>
+      </svg></span
+    > code
+  </h1>
+  <div>
+    <img
+      class="arrow"
+      src="/assets/hero__bottomArrow.svg"
+      alt="Arrow icon to indicate that there is more content if you scroll down"
+    />
+    <small>Scroll down</small>
+  </div>
 </section>
 
 <script>
-    const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-              if(entry.isIntersecting) {
-                  entry.target.classList.add('fade__animation')
-              }
-          })
-      })
-  
-      const section = document.querySelectorAll('.section')
-  
-      section.forEach((el) => observer.observe(el))
-  </script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade__animation");
+      }
+    });
+  });
+
+  const section = document.querySelectorAll(".section");
+
+  section.forEach((el) => observer.observe(el));
+</script>
 
 <style>
+  section {
+    margin-block: 3rem;
+  }
+
+  h1 {
+    font-size: var(--fs__28);
+    font-weight: var(--fw__medium);
+    text-align: center;
+    letter-spacing: -1px;
+  }
+
+  div {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    margin-top: 3rem;
+  }
+
+  div img {
+    animation: hop 2s linear infinite;
+  }
+
+  small {
+    margin-top: 0.5rem;
+    font-size: var(--fs__16);
+    font-weight: var(--fw__regular);
+    color: var(--clr__gray);
+  }
+
+  @keyframes hop {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  /* svg and svg animation */
+  span {
+    position: relative;
+  }
+
+  .misc {
+    position: absolute;
+    width: 95%;
+    height: auto;
+    bottom: -0.75rem;
+    left: 0;
+    animation: fade-in 1.5s ease-in;
+  }
+
+  @keyframes fade-in {
+    from {
+      width: 0;
+      scale: 0;
+      opacity: 0;
+    }
+    to {
+      width: 100%;
+      scale: 1;
+      opacity: 1;
+    }
+  }
+  @media (min-width: 768px) {
     section {
-        margin-block: 3rem;
+      margin-block: 5rem;
     }
 
     h1 {
-        font-size: var(--fs__28);
-        font-weight: var(--fw__medium);
-        text-align: center;
-        letter-spacing: -1px;
+      font-size: var(--fs__40);
     }
-
-    div {
-        display: grid;
-        place-content: center;
-        place-items: center;
-        margin-top: 3rem;
-    }
-
-    div img {
-        animation: hop 2s linear infinite;
-    }
-
     small {
-        margin-top: 0.5rem;
-        font-size: var(--fs__16);
-        font-weight: var(--fw__regular);
-        color: var(--clr__gray);
+      font-size: var(--fs__18);
     }
-
-    @keyframes hop {
-        0% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-1rem);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-    /* svg and svg animation */
-    span {
-            position: relative;
-        }
 
     .misc {
-            position: absolute;
-            width: 95%;
-            height: auto;
-            bottom: -.75rem;
-            left: 0;
-            animation: fade-in 1.5s ease-in;
-        }
-    
-    @keyframes fade-in {
-        from { 
-                width: 0;
-                scale: 0;
-                opacity: 0; 
-        }
-        to {
-            width: 100%;
-            scale: 1;
-            opacity: 1;
-        }
+      bottom: -1.25rem;
     }
-    @media (min-width: 768px) {
+  }
 
-        section {
-            margin-block: 5rem;
-        }
-
-
-        h1 {
-            font-size: var(--fs__40);
-
-        }
-        small {
-            font-size: var(--fs__18);
-        }
-
-        .misc {
-            bottom: -1.25rem;
-        }
+  @media (min-width: 1024px) {
+    section {
+      margin-block: 7rem;
     }
 
-    @media (min-width: 1024px) {
-
-        section {
-            margin-block: 7rem;
-        }
-
-        h1 {
-            font-size: var(--fs__64);
-        }
-
-        .misc {
-            bottom: -1.75rem;
-        }
-        
-        .arrow {
-            width: 74px;
-            aspect-ratio: 1;
-        }
+    h1 {
+      font-size: var(--fs__64);
     }
+
+    .misc {
+      bottom: -1.75rem;
+    }
+
+    .arrow {
+      width: 74px;
+      aspect-ratio: 1;
+    }
+  }
 </style>

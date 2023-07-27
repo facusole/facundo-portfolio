@@ -1,183 +1,199 @@
 <section class="section">
-    <div>
-        <h1>
-            I'm Facu, <br />
-            <span>Front end
-                <svg class="misc" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m 2 40 q 40 -11 75 -3" stroke="#5238F4" stroke-width="2.17925" stroke-linecap="round"/>
-                </svg>
-                </span> developer
-        </h1>
-        <picture>
-            <source
-                srcset="/assets/me__Tablet.avif"
-                media="(min-width: 768px)"
-            />
-            <img src="/assets/me__Mobile.avif" alt="Picture of Facundo Solé, a frontend developer" />
-        </picture>
-    </div>
+  <div>
+    <h1>
+      I'm Facu, <br />
+      <span
+        >Front-end
+        <svg
+          class="misc"
+          viewBox="0 0 80 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m 2 40 q 40 -11 75 -3"
+            stroke="#5238F4"
+            stroke-width="2.17925"
+            stroke-linecap="round"></path>
+        </svg>
+      </span> developer
+    </h1>
+    <picture>
+      <source srcset="/assets/me__Tablet.avif" media="(min-width: 768px)" />
+      <img
+        src="/assets/me__Mobile.avif"
+        alt="Picture of Facundo Solé, a frontend developer"
+      />
+    </picture>
+  </div>
 
-    <article>
-        <p>
-            Frontend developer based in Argentina. Current main technologies are Next.js with TypeScript for web applications and Astro.build with JavaScript for a more static oriented approach. Keen interest in performance, SEO and accesibility, always looking for the best practices.
-            
-        </p>
-        <p>
-            Seeking to learn new interesting things and keep developing my skills, while creating user-friendly applications in a professional environment. Fast learner and proactive in finding the best solutions for the client.
-        </p>
-        <p>
-            Outside of work, I'm a sports enthusiast, who loves playing all kind of sports. I also love learning languages! It opens my mind to new cultures and new ways to approach my problems.
-        </p>
-    </article>
+  <article>
+    <p>
+      Frontend developer based in Argentina. Current main technologies are
+      Next.js with TypeScript for web applications and Astro.build with
+      JavaScript for a more static oriented approach. Keen interest in
+      performance, SEO and accesibility, always looking for the best practices.
+    </p>
+    <p>
+      Seeking to learn new interesting things and keep developing my skills,
+      while creating user-friendly applications in a professional environment.
+      Fast learner and proactive in finding the best solutions for the client.
+    </p>
+    <p>
+      Outside of work, I'm a sports enthusiast, who loves playing all kind of
+      sports. I also love learning languages! It opens my mind to new cultures
+      and new ways to approach my problems.
+    </p>
+  </article>
 </section>
 
 <script>
-    const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-              if(entry.isIntersecting) {
-                  entry.target.classList.add('fade__animation')
-              }
-          })
-      })
-  
-      const section = document.querySelectorAll('.section')
-  
-      section.forEach((el) => observer.observe(el))
-  </script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade__animation");
+      }
+    });
+  });
+
+  const section = document.querySelectorAll(".section");
+
+  section.forEach((el) => observer.observe(el));
+</script>
 
 <style>
+  section {
+    margin-block: 2rem;
+  }
+
+  h1 {
+    font-size: var(--fs__36);
+    font-weight: var(--fw__medium);
+    width: 8ch;
+  }
+
+  article {
+    margin-top: 3rem;
+  }
+
+  h2 {
+    font-size: var(--fs__28);
+    font-weight: var(--fw__medium);
+  }
+
+  p {
+    font-size: var(--fs__18);
+    font-weight: var(--fw__regular);
+    margin-bottom: 1rem;
+  }
+
+  div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    align-items: center;
+  }
+
+  span {
+    position: relative;
+    z-index: 25;
+  }
+
+  .misc {
+    position: absolute;
+    width: 95%;
+    height: auto;
+    bottom: -1.75rem;
+    left: 0;
+    animation: fade-in 1.5s ease-in;
+  }
+
+  @keyframes fade-in {
+    from {
+      width: 0;
+      scale: 0;
+      opacity: 0;
+    }
+    to {
+      width: 100%;
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 768px) {
     section {
-        margin-block: 2rem;
-    }
-
-    h1 {
-        font-size: var(--fs__36);
-        font-weight: var(--fw__medium);
-        width: 8ch;
-    }
-
-    article {
-        margin-top: 3rem;
-    }
-
-    h2 {
-        font-size: var(--fs__28);
-        font-weight: var(--fw__medium);
-    }
-
-    p {
-        font-size: var(--fs__18);
-        font-weight: var(--fw__regular);
-        margin-bottom: 1rem;
+      margin-block: 5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
 
     div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        place-items: center;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
-    span {
-        position: relative;
-        z-index: 25;
+    h1 {
+      font-size: var(--fs__48);
+      line-height: normal;
+    }
+
+    article {
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: var(--fs__32);
+    }
+
+    p {
+      font-size: var(--fs__20);
     }
 
     .misc {
-            position: absolute;
-            width: 95%;
-            height: auto;
-            bottom: -1.75rem;
-            left: 0;
-            animation: fade-in 1.5s ease-in;
-        }
-    
-    @keyframes fade-in {
-        from { 
-                width: 0;
-                scale: 0;
-                opacity: 0; 
-        }
-        to {
-            width: 100%;
-            scale: 1;
-            opacity: 1;
-        }
+      bottom: -2.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    section {
+      margin-block: 6.5rem;
+      display: grid;
+      /* grid-template-columns: repeat(2, 1fr); */
+      grid-template-columns: minmax(300px, 500px) minmax(600px, 700px);
+      place-content: center;
+      gap: 0;
     }
 
-    @media (min-width: 768px) {
-        section {
-            margin-block: 5rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        div {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        h1 {
-            font-size: var(--fs__48);
-            line-height: normal;
-        }
-
-        article {
-            margin-top: 0;
-        }
-
-        h2 {
-            font-size: var(--fs__32);
-        }
-
-        p {
-            font-size: var(--fs__20);
-        }
-
-        .misc {
-            bottom: -2.25rem;
-        }
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
 
-    @media (min-width: 1024px) {
-        section {
-            margin-block: 6.5rem;
-            display: grid;
-            /* grid-template-columns: repeat(2, 1fr); */
-            grid-template-columns: minmax(300px, 500px) minmax(600px, 700px);
-            place-content: center;
-            gap: 0;
-        }
-
-        div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        h1 {
-            font-size: var(--fs__64);
-        }
-
-        article {
-            margin-top: 0;
-        }
-
-        h2 {
-            font-size: var(--fs__48);
-        }
-
-        p {
-            font-size: var(--fs__20);
-            margin-bottom: 2rem;
-            max-width: 50ch;
-        }
-
-        .misc {
-            bottom: -3rem;
-        }
+    h1 {
+      font-size: var(--fs__64);
     }
+
+    article {
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: var(--fs__48);
+    }
+
+    p {
+      font-size: var(--fs__20);
+      margin-bottom: 2rem;
+      max-width: 50ch;
+    }
+
+    .misc {
+      bottom: -3rem;
+    }
+  }
 </style>
