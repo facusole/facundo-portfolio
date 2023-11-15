@@ -1,130 +1,138 @@
 <footer class="section">
-    <ul>
-        <li>
-            <a href="/projects" rel="noopener noreferrer">Projects</a>
-        </li>
-        <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">Github</a>
-        </li>
-        <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </li>
-        <li>
-            <a href="/about-me" rel="noopener noreferrer">About me</a>
-        </li>
-    </ul>
-    <div>
-        <a class="backTo__top" href="#">
-            <img
-                src="/assets/footer__upArrow.svg"
-                alt="Arrow pointing upwards to go to the top of the site when you click on it"
-            />
-        </a>
-    </div>
+  <ul>
+    <li>
+      <a href="/projects" rel="noopener noreferrer">Projects</a>
+    </li>
+    <li>
+      <a
+        href="https://github.com/facusole"
+        target="_blank"
+        rel="noopener noreferrer">Github</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/facundo-sole/"
+        target="_blank"
+        rel="noopener noreferrer">LinkedIn</a
+      >
+    </li>
+    <li>
+      <a href="/about-me" rel="noopener noreferrer">About me</a>
+    </li>
+  </ul>
+  <div>
+    <a class="backTo__top" href="#">
+      <img
+        src="/assets/footer__upArrow.svg"
+        alt="Arrow pointing upwards to go to the top of the site when you click on it"
+      />
+    </a>
+  </div>
 </footer>
 <script>
-    const backToTop = document.querySelector('.backTo__top')
+  const backToTop = document.querySelector(".backTo__top");
 
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+  backToTop.addEventListener("click", () =>
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  );
 
-    const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			if(entry.isIntersecting) {
-				entry.target.classList.add('fade__animation')
-			}
-		})
-	})
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade__animation");
+      }
+    });
+  });
 
-	const section = document.querySelectorAll('.section')
+  const section = document.querySelectorAll(".section");
 
-	section.forEach((el) => observer.observe(el))
+  section.forEach((el) => observer.observe(el));
 </script>
 
 <style>
+  footer {
+    background-color: var(--clr__black2);
+    border-radius: 2.5rem;
+    padding: 2rem 2rem 0.5rem 2rem;
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    margin-bottom: 3rem;
+  }
+
+  li > a {
+    color: var(--clr__white);
+    font-weight: var(--fw__medium);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border: 2px solid var(--clr__gray);
+    transition: 0.2s linear;
+  }
+
+  li > a:is(:hover, :focus-within) {
+    color: var(--clr__black2);
+    background: var(--clr__lime);
+    border: 2px solid var(--clr__lime);
+  }
+
+  ul :is(li:nth-child(1), li:nth-child(4)) a {
+    border-radius: 1rem;
+  }
+
+  ul :is(li:nth-child(2), li:nth-child(3)) a {
+    border-radius: 100vh;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  .backTo__top {
+    background: none;
+    cursor: pointer;
+    border: transparent;
+    text-align: center;
+  }
+
+  .backTo__top img {
+    width: 4rem;
+    aspect-ratio: 1;
+    margin-inline: auto;
+    transition: scale 0.2s ease-in;
+  }
+
+  .backTo__top img:is(:hover, :focus-within) {
+    scale: 1.04;
+  }
+
+  @media (min-width: 768px) {
+    footer,
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     footer {
-        background-color: var(--clr__black2);
-        border-radius: 2.5rem;
-        padding: 2rem 2rem 0.5rem 2rem;
+      padding: 1rem 3rem;
     }
 
     ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0;
-        text-align: center;
+      gap: 0.5rem;
     }
 
     li {
-        margin-bottom: 3rem;
+      margin: 0;
     }
-
-    li > a {
-        color: var(--clr__white);
-        font-weight: var(--fw__medium);
-        text-decoration: none;
-        padding: 1rem 1.5rem;
-        text-align: center;
-        border: 2px solid var(--clr__gray);
-        transition: 0.2s linear;
-    }
-
-    li > a:is(:hover, :focus-within) {
-        color: var(--clr__black2);
-        background: var(--clr__lime);
-        border: 2px solid var(--clr__lime);
-    }
-
-    ul :is(li:nth-child(1), li:nth-child(4)) a {
-        border-radius: 1rem;
-    }
-
-    ul :is(li:nth-child(2), li:nth-child(3)) a {
-        border-radius: 100vh;
-    }
-
-    div {
-        text-align: center;
-    }
-
-    .backTo__top {
-        background: none;
-        cursor: pointer;
-        border: transparent;
-        text-align: center;
-    }
-
-    .backTo__top img {
-        width: 4rem;
-        aspect-ratio: 1;
-        margin-inline: auto;
-        transition: scale 0.2s ease-in;
-
-    }
-
-    .backTo__top img:is(:hover, :focus-within) {
-        scale: 1.04;
-    }
-
-    @media (min-width: 768px) {
-        footer,
-        ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        footer {
-            padding: 1rem 3rem;
-        }
-
-        ul {
-            gap: .5rem;
-        }
-
-        li {
-            margin: 0;
-        }
-    }
+  }
 </style>
-
