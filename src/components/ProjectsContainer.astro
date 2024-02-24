@@ -71,14 +71,15 @@ import Card from "./card/Card.astro";
 
 <style>
   section {
+    --spacer: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
-    margin-left: 1.5rem;
+    grid-auto-flow: column;
+    grid-auto-columns: 87%;
 
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    padding: 0 var(--spacer);
 
+    overflow-x: auto;
     scrollbar-width: none;
   }
 
@@ -88,17 +89,18 @@ import Card from "./card/Card.astro";
 
   @media (min-width: 768px) {
     section {
-      grid-template-columns: repeat(2, 1fr);
-      place-items: center;
+      --spacer: 3rem;
+      grid-auto-columns: 46%;
       gap: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     section {
-      grid-template-columns: repeat(3, 1fr);
-      place-items: center;
-      gap: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 6rem;
     }
   }
 </style>

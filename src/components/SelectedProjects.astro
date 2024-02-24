@@ -4,40 +4,48 @@ import Card from "./card/Card.astro";
 
 <section class="section">
   <h2>Selected projects</h2>
-  <div class="projects__container">
-    <Card
-      src="/assets/projects/humankind__cover.jpg"
-      alt="Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?"
-      title="Humankind - Wrestle"
-      tags="Next.JS, TypeScript, tailwindCSS"
-      desc="Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?"
-      link="https://www.humankind.art/wrestle"
-    />
-    <Card
-      src="/assets/projects/tateti__cover.jpg"
-      alt="Landing page for Grupo Tateti, a non-profit organization from Argentina."
-      title="Grupo Tateti"
-      tags="Astro, CSS, JavaScript"
-      desc="Landing page for Grupo Tateti, a non-profit organization from Argentina."
-      link="https://www.grupotateti.org.ar"
-    />
-    <Card
-      src="/assets/projects/pluma__cover.jpg"
-      alt="E-commerce website for a stationary called Pluma de Papel, where you can make the buying flow, from selecting an item all the way through the payment"
-      title="E-commerce"
-      tags="React, CSS, Firebase"
-      desc="E-commerce made with React.js, with a custom searchbar with auto-suggestions and a checkout section. Utilizes firebase to store the products"
-      link="https://pluma-de-papel.vercel.app"
-    />
+  <ul class="projects__container">
+    <li>
       <Card
-        src="/assets/projects/pokedex__cover.jpg"
-        alt="Pokedex with a modern aesthetic, made with React as a SPA."
-        title="Pokedex!"
-        tags="React, TailwindCSS"
-        desc="Using the PokeAPI, fully functional Pokedex up until 5th generation. It's a SPA made with React"
-        link="https://pokedex-liard-sigma.vercel.app"
+        src="/assets/projects/humankind__cover.jpg"
+        alt="Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?"
+        title="Humankind - Wrestle"
+        tags="Next.JS, TypeScript, tailwindCSS"
+        desc="Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?"
+        link="https://www.humankind.art/wrestle"
       />
-  </div>
+    </li>
+    <li>
+      <Card
+        src="/assets/projects/tateti__cover.jpg"
+        alt="Landing page for Grupo Tateti, a non-profit organization from Argentina."
+        title="Grupo Tateti"
+        tags="Astro, CSS, JavaScript"
+        desc="Landing page for Grupo Tateti, a non-profit organization from Argentina."
+        link="https://www.grupotateti.org.ar"
+      />
+    </li>
+    <li>
+      <Card
+        src="/assets/projects/pluma__cover.jpg"
+        alt="E-commerce website for a stationary called Pluma de Papel, where you can make the buying flow, from selecting an item all the way through the payment"
+        title="E-commerce"
+        tags="React, CSS, Firebase"
+        desc="E-commerce made with React.js, with a custom searchbar with auto-suggestions and a checkout section. Utilizes firebase to store the products"
+        link="https://pluma-de-papel.vercel.app"
+      />
+    </li>
+      <li>
+        <Card
+          src="/assets/projects/pokedex__cover.jpg"
+          alt="Pokedex with a modern aesthetic, made with React as a SPA."
+          title="Pokedex!"
+          tags="React, TailwindCSS"
+          desc="Using the PokeAPI, fully functional Pokedex up until 5th generation. It's a SPA made with React"
+          link="https://pokedex-liard-sigma.vercel.app"
+        />
+      </li>
+  </ul>
   <div class="projects__page">
     <a href="/projects">
       <span class="view__project">View all projects</span><span
@@ -78,21 +86,22 @@ import Card from "./card/Card.astro";
   }
 
   .projects__container {
+    --spacer: 1.5rem;
+    list-style: none;
     display: grid;
-    padding-left: 1.5rem;
-    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    grid-auto-flow: column;
+    grid-auto-columns: 87%;
 
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    padding: 0 var(--spacer);
 
+    overflow-x: auto;
     scrollbar-width: none;
-    border: 4px solid transparent;
   }
 
-  .projects__container:last-child {
-    background: red;
-    border: solid 4px rebeccapurple
+  .projects__container > li {
+    display: grid;
+    grid-template-rows: min-content;
   }
 
   .projects__container::-webkit-scrollbar {
@@ -148,6 +157,13 @@ import Card from "./card/Card.astro";
       font-size: var(--fs__28);
     }
 
+    .projects__container {
+    --spacer: 3rem;
+    gap: 2rem;
+    grid-auto-columns: 47%;
+
+  }
+
     
     .projects__page {
       margin-inline: 3rem;
@@ -165,6 +181,12 @@ import Card from "./card/Card.astro";
     h2 {
       font-size: var(--fs__40);
     }
+
+    .projects__container {
+      --spacer: 6rem;
+      grid-auto-columns: 26%;
+
+  }
     
     .projects__page {
       margin-inline: 6rem;
