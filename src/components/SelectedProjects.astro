@@ -6,7 +6,15 @@ import Card from "./card/Card.astro";
   <h2>Selected projects</h2>
   <div class="projects__container">
     <Card
-      src="/assets/projects/Tateti.webp"
+      src="/assets/projects/humankind__cover.jpg"
+      alt="Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?"
+      title="Humankind - Wrestle"
+      tags="Next.JS, TypeScript, tailwindCSS"
+      desc="Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?"
+      link="https://www.humankind.art/wrestle"
+    />
+    <Card
+      src="/assets/projects/tateti__cover.jpg"
       alt="Landing page for Grupo Tateti, a non-profit organization from Argentina."
       title="Grupo Tateti"
       tags="Astro, CSS, JavaScript"
@@ -14,30 +22,21 @@ import Card from "./card/Card.astro";
       link="https://www.grupotateti.org.ar"
     />
     <Card
-      src="/assets/projects/plumaDePapel.webp"
+      src="/assets/projects/pluma__cover.jpg"
       alt="E-commerce website for a stationary called Pluma de Papel, where you can make the buying flow, from selecting an item all the way through the payment"
       title="E-commerce"
       tags="React, CSS, Firebase"
       desc="E-commerce made with React.js, with a custom searchbar with auto-suggestions and a checkout section. Utilizes firebase to store the products"
       link="https://pluma-de-papel.vercel.app"
     />
-    <Card
-      src="/assets/projects/Pokedex.webp"
-      alt="Pokedex with a modern aesthetic, made with React as a SPA."
-      title="Pokedex!"
-      tags="React, TailwindCSS"
-      desc="Using the PokeAPI, fully functional Pokedex up until 5th generation. It's a SPA made with React"
-      link="https://pokedex-liard-sigma.vercel.app"
-    />
-
-    <Card
-      src="/assets/projects/Finance.webp"
-      alt="Finance table where you can keep track of your incomes and your expenses with two individual tabs."
-      title="Finance table"
-      tags="React, CSS"
-      desc="Financial table where you can keep track of your incomes and your expenses, using localStorage to persist your data"
-      link="https://finances-table.vercel.app"
-    />
+      <Card
+        src="/assets/projects/pokedex__cover.jpg"
+        alt="Pokedex with a modern aesthetic, made with React as a SPA."
+        title="Pokedex!"
+        tags="React, TailwindCSS"
+        desc="Using the PokeAPI, fully functional Pokedex up until 5th generation. It's a SPA made with React"
+        link="https://pokedex-liard-sigma.vercel.app"
+      />
   </div>
   <div class="projects__page">
     <a href="/projects">
@@ -80,6 +79,7 @@ import Card from "./card/Card.astro";
 
   .projects__container {
     display: grid;
+    padding-left: 1.5rem;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 
@@ -87,6 +87,12 @@ import Card from "./card/Card.astro";
     scroll-snap-type: x mandatory;
 
     scrollbar-width: none;
+    border: 4px solid transparent;
+  }
+
+  .projects__container:last-child {
+    background: red;
+    border: solid 4px rebeccapurple
   }
 
   .projects__container::-webkit-scrollbar {
@@ -96,6 +102,7 @@ import Card from "./card/Card.astro";
   .projects__page {
     display: flex;
     justify-content: end;
+    margin-inline: 1.5rem
   }
 
   a {
@@ -140,6 +147,11 @@ import Card from "./card/Card.astro";
     h2 {
       font-size: var(--fs__28);
     }
+
+    
+    .projects__page {
+      margin-inline: 3rem;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -152,6 +164,10 @@ import Card from "./card/Card.astro";
     }
     h2 {
       font-size: var(--fs__40);
+    }
+    
+    .projects__page {
+      margin-inline: 6rem;
     }
   }
 </style>

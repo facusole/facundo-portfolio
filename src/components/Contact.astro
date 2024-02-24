@@ -24,7 +24,7 @@
   section.forEach((el) => observer.observe(el));
 </script>
 
-<section class="section" id="contact">
+<section class="section p__inline" id="contact">
   <h3>Let's build together!</h3>
   <h2>facundojsole@gmail.com</h2>
   <span><button class="copyInteraction">Copy email</button></span>
@@ -39,6 +39,7 @@
     gap: 1rem;
 
     margin-block: 3rem;
+    margin-inline: 1.5rem;
     padding: 7rem 1rem;
     background: var(--clr__secondary__purple);
     border-radius: 2.5rem;
@@ -75,6 +76,11 @@
   }
 
   @media (min-width: 768px) {
+
+    section {
+      margin-inline: 3rem;
+
+    }
     h2 {
       font-size: var(--fs__48);
     }
@@ -90,6 +96,13 @@
 
     button {
       padding: 0.75rem 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    section {
+      margin-inline: 6rem;
+
     }
   }
 </style>
