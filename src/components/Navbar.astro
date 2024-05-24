@@ -35,16 +35,21 @@ const { activeHome, activeProjects, activeAbout} = Astro.props
 </nav>
 
 <script>
+    const body = document.querySelector('#body')
     const menu = document.querySelector('.menu')
     const menuBtn = document.querySelector('.menu__container')
     const menuClose = document.querySelector('svg')
 
     menuBtn.addEventListener('click', () => {
         menu.classList.toggle('active')
+        body.classList.toggle('overflow__hidden')
+
     })
 
     menuClose.addEventListener('click', () => {
         menu.classList.toggle('active')
+        body.classList.toggle('overflow__hidden')
+        window.scrollTo(0,0)
     })
 
     const observer = new IntersectionObserver((entries) => {
@@ -72,6 +77,14 @@ const { activeHome, activeProjects, activeAbout} = Astro.props
 	menuLinks.forEach((el) => observerMenu.observe(el))
 
 </script>
+
+<style is:global>
+
+.overflow__hidden {
+    overflow: hidden;
+}
+
+</style>
 
 <style>
 
