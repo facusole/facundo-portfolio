@@ -170,7 +170,7 @@ import Card from "./card/Card.astro";
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 800px) {
     section {
       margin-block: 7rem;
     }
@@ -185,11 +185,17 @@ import Card from "./card/Card.astro";
     .projects__container {
       --spacer: 6rem;
       grid-auto-columns: 26%;
-
+      gap: var(--spacer);
   }
     
     .projects__page {
       margin-inline: 6rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .projects__container {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 </style>
