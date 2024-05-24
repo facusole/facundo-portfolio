@@ -200,8 +200,11 @@ import Card from "./card/Card.astro";
   }
 
   @media (min-width: 1200px) {
-    .projects__container {
-      grid-auto-columns: 21%;
+    .projects__container {  
+      display: flex;
+      padding: 0;
+      gap: 3rem;
+      justify-content: space-between;
       margin-inline: 6rem;
     }
   }
