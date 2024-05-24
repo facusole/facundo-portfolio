@@ -10,7 +10,7 @@ import Card from "./card/Card.astro";
         src="/assets/projects/humankind__cover.jpg"
         alt="Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?"
         title="Humankind - Wrestle"
-        tags="Next.JS, TypeScript, tailwindCSS"
+        tags="Next, TypeScript, Tailwind"
         desc="Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?"
         link="https://www.humankind.art/wrestle"
       />
@@ -88,15 +88,12 @@ import Card from "./card/Card.astro";
   .projects__container {
     --spacer: 1.5rem;
     list-style: none;
-    display: grid;
-    gap: 1rem;
-    grid-auto-flow: column;
-    grid-auto-columns: 87%;
-
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 1.5rem;
     padding: 0 var(--spacer);
-
-    overflow-x: auto;
-    scrollbar-width: none;
+    overflow: scroll;
   }
 
   .projects__container > li {
@@ -158,10 +155,7 @@ import Card from "./card/Card.astro";
     }
 
     .projects__container {
-    --spacer: 3rem;
-    gap: 2rem;
-    grid-auto-columns: 47%;
-
+      --spacer: 3rem;
   }
 
     
@@ -181,13 +175,7 @@ import Card from "./card/Card.astro";
     h2 {
       font-size: var(--fs__40);
     }
-
-    .projects__container {
-      --spacer: 6rem;
-      grid-auto-columns: 26%;
-      gap: var(--spacer);
-  }
-    
+   
     .projects__page {
       margin-inline: 6rem;
     }
@@ -195,17 +183,8 @@ import Card from "./card/Card.astro";
 
   @media (min-width: 1000px) {
     .projects__container {
-      grid-auto-columns: 41%;
+      --spacer: 6rem;
     }
   }
 
-  @media (min-width: 1400px) {
-    .projects__container {  
-      display: flex;
-      padding: 0;
-      gap: 3rem;
-      justify-content: space-between;
-      margin-inline: 6rem;
-    }
-  }
 </style>
