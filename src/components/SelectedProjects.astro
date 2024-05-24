@@ -195,7 +195,14 @@ import Card from "./card/Card.astro";
 
   @media (min-width: 1000px) {
     .projects__container {
-      grid-template-columns: repeat(4, 1fr);
+      grid-auto-columns: 41%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .projects__container {
+      grid-auto-columns: 21%;
+      margin-inline: 6rem;
     }
   }
 </style>
