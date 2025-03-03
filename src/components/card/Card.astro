@@ -6,7 +6,7 @@ import TagLabel from "../tagLabel/TagLabel.astro";
 
 <article>
     <div class="spacing">
-        <Image width={320} height={240} class="project__img" src={src} alt={alt} />
+        <Image width={320} height={240} loading="eager" class="project__img" src={src} alt={alt} />
         <span>
             <TagLabel tags={tags} />
         </span>

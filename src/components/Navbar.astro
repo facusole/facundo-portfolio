@@ -112,11 +112,15 @@ console.log(pathname)
     }
 
     nav {
+        position: fixed;
+        top: 0;
+        inset-inline: 1.5rem;
+        z-index: 9999;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
-        margin: 2rem 1.5rem;
+        margin-block: 2rem;
 
         background-color: var(--clr__secondary__purple);
         border-radius: 100vh;
@@ -187,7 +191,7 @@ console.log(pathname)
 
         nav {
             flex-direction: row;
-            margin-inline: 3rem
+            inset-inline: 3rem
         }
 
         .menu__container {
@@ -234,7 +238,7 @@ console.log(pathname)
 
         nav {
             font-size: var(--fs__20);
-            margin-inline: 6rem;
+            inset-inline: 6rem;
         }
         
         a {
