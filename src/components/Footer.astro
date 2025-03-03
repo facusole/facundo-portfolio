@@ -1,25 +1,16 @@
+---
+import { FOOTER_LINKS } from "../data/footer_links";
+---
+
 <footer class="section">
   <ul>
-    <li>
-      <a href="/projects" rel="noopener noreferrer">Projects</a>
-    </li>
-    <li>
-      <a
-        href="https://github.com/facusole"
-        target="_blank"
-        rel="noopener noreferrer">Github</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://www.linkedin.com/in/facundo-sole/"
-        target="_blank"
-        rel="noopener noreferrer">LinkedIn</a
-      >
-    </li>
-    <li>
-      <a href="/about-me" rel="noopener noreferrer">About me</a>
-    </li>
+    {
+      FOOTER_LINKS.map((item) => (
+        <li>
+          <a href={item.href} target={item.href.includes("https") ? "_blank" : "_self"} rel="noopener noreferrer">{item.name}</a>
+        </li>
+      ))
+    }
   </ul>
   <div>
     <button class="backTo__top" >
@@ -87,11 +78,11 @@
     border: 2px solid var(--clr__lime);
   }
 
-  ul :is(li:nth-child(1), li:nth-child(4)) a {
+  ul :is(li:nth-child(even)) a {
     border-radius: 1rem;
   }
 
-  ul :is(li:nth-child(2), li:nth-child(3)) a {
+  ul :is(li:nth-child(odd)) a {
     border-radius: 100vh;
   }
 
