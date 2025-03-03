@@ -1,11 +1,13 @@
 ---
+import { Image } from "astro:assets"
+
 const { testimony, src, alt, linkedinHref, name, role  } = Astro.props
 ---
 
 <article>
     <p>"{testimony}"</p>
     <div class="wrapper">
-        <img class="people" src={src} alt={alt} loading="lazy">
+        <Image width={80} height={80} class="people" src={src} alt={alt} loading="lazy">
         <div class="info">
             <h3><a href={linkedinHref}>{name}</a></h3>
             <h4>{role}</h4>

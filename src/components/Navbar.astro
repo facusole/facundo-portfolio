@@ -1,6 +1,9 @@
 ---
 import CTA from "./cta/CTA.astro";
-const { activeHome, activeProjects, activeAbout} = Astro.props
+import NAVBAR_LINKS from "../data/navbar_links";
+
+const pathname = Astro.url.pathname
+console.log(pathname)
 ---
 
 <nav class="section">
@@ -13,11 +16,12 @@ const { activeHome, activeProjects, activeAbout} = Astro.props
                         <path d="M14.83 14.83L9.16998 9.17004" stroke="#6e6e6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </li>
-                <li class="hide"><a href="/"><span>Home</span></a></li>
+                
+                <!-- <li class="hide"><a href="/"><span>Home</span></a></li>
                 <li class="hide"><a href="/projects"><span>Projects</span></a></li>
                 <li class="hide"><a href="/about-me"><span>About me</span></a></li>
                 <li class="hide"><a href="https://github.com/facusole"><span>Github</span></a></li>
-                <li class="hide"><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
+                <li class="hide"><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li> -->
             </ul>
         </div>
     <button class="menu__container">
@@ -25,11 +29,9 @@ const { activeHome, activeProjects, activeAbout} = Astro.props
         
     </button>
     <ul class="desktop">
-        <li><a class={activeHome} href="/"><span>Home</span></a></li>
-        <li><a class={activeProjects} href="/projects"><span>Projects</span></a></li>
-        <li><a class={activeAbout} href="/about-me"><span>About me</span></a></li>
-        <li><a href="https://github.com/facusole"><span>Github</span></a></li>
-        <li><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
+        {NAVBAR_LINKS.map((item) => (
+            <li class="hide"><a class={pathname === item.href ? "active" : ""} href={item.href} target={item.href.includes("https") ? "_blank" : "_self"} rel="noopener noreferrer"><span>{item.name}</span></a></li> 
+        ))}
     </ul>
     <CTA cta='Contact me' />
 </nav>
@@ -110,11 +112,15 @@ const { activeHome, activeProjects, activeAbout} = Astro.props
     }
 
     nav {
+        position: fixed;
+        top: 0;
+        inset-inline: 1.5rem;
+        z-index: 9999;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
-        margin: 2rem 1.5rem;
+        margin-block: 2rem;
 
         background-color: var(--clr__secondary__purple);
         border-radius: 100vh;
@@ -185,7 +191,7 @@ const { activeHome, activeProjects, activeAbout} = Astro.props
 
         nav {
             flex-direction: row;
-            margin-inline: 3rem
+            inset-inline: 3rem
         }
 
         .menu__container {
@@ -232,7 +238,7 @@ const { activeHome, activeProjects, activeAbout} = Astro.props
 
         nav {
             font-size: var(--fs__20);
-            margin-inline: 6rem;
+            inset-inline: 6rem;
         }
         
         a {
