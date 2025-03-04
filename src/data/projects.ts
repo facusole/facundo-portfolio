@@ -1,11 +1,12 @@
 export const PROJECTS = [
     {
-      src: "/assets/projects/humankind__cover.jpg",
+      src: "/assets/projects/humankind/humankind__cover.jpg",
       alt: "Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?",
       title: "Humankind - Wrestle",
       tags: "Next, TypeScript, Tailwind",
       desc: "Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?",
-      link: "https://www.humankind.art/wrestle"
+      link: "/humankind-wrestle",
+      demo_link: "https://www.humankind.art/wrestle"
     },
     {
       src: "/assets/projects/tateti__cover.jpg",
@@ -13,7 +14,8 @@ export const PROJECTS = [
       title: "Grupo Tateti",
       tags: "Astro, CSS, JavaScript",
       desc: "Landing page for Grupo Tateti, a non-profit organization from Argentina.",
-      link: "https://www.grupotateti.org.ar"
+      link: "/grupo-tateti",
+      demo_link: "https://www.grupotateti.org.ar"
     },
     {
         src: "/assets/projects/pokedex__cover.jpg",
@@ -21,7 +23,8 @@ export const PROJECTS = [
         title: "Pokedex!",
         tags: "React, TailwindCSS",
         desc: "Using the PokeAPI, fully functional Pokedex up until 5th generation. It's a SPA made with React",
-        link: "https://pokedex-liard-sigma.vercel.app"
+        link: "/pokedex",
+        demo_link: "https://pokedex-liard-sigma.vercel.app"
     },
     {
       src: "/assets/projects/creativity.webp",
@@ -29,7 +32,8 @@ export const PROJECTS = [
       title: "Be creative!",
       tags: "Next, Tailwind, Framer",
       desc: "Proof of concept landing page to encourage creativity for Frontend Developers.",
-      link: "https://creativity-is-better.vercel.app/"
+      link: "/be-creative",
+      demo_link: "https://creativity-is-better.vercel.app/"
     },
     {
       src: "/assets/projects/sliders__cover.webp",
@@ -37,7 +41,8 @@ export const PROJECTS = [
       title: "Facundo Solé",
       tags: "Next, Tailwind, Framer",
       desc: "Alternative landing page made with Google IDX editor, playing around with smooth animations between sections",
-      link: "https://google-idx-test.vercel.app/"
+      link: "/sliders-alternative-landing",
+      demo_link: "https://google-idx-test.vercel.app/"
     },
     {
       src: "/assets/projects/voting__cover.jpg",
@@ -45,7 +50,8 @@ export const PROJECTS = [
       title: "Voting app challenge",
       tags: "Next.js, Tailwind",
       desc: "First project using Next, it's a technical challenge from DailyPay. It uses a mock data file where I get the list of nominees.",
-      link: "https://next-voting-app.vercel.app"
+      link: "/voting-app",
+      demo_link: "https://next-voting-app.vercel.app"
     },
     {
       src: "/assets/projects/table__cover.jpg",
@@ -53,7 +59,8 @@ export const PROJECTS = [
       title: "Finance table",
       tags: "React, CSS",
       desc: "Financial table where you can keep track of your incomes and your expenses, using localStorage to persist your data",
-      link: "https://finances-table.vercel.app"
+      link: "/finance-table",
+      demo_link: "https://finances-table.vercel.app"
     },
     {
       src: "/assets/projects/pass__cover.jpg",
@@ -61,7 +68,8 @@ export const PROJECTS = [
       title: "Password generator",
       tags: "React, TailwindCSS",
       desc: "Password generator, customizable with lowercase, uppercase, symbols and numbers.",
-      link: "https://password-gen-theta.vercel.app"
+      link: "/password-generator",
+      demo_link: "https://password-gen-theta.vercel.app"
     },
     {
       src: "/assets/projects/Card.webp",
@@ -69,7 +77,8 @@ export const PROJECTS = [
       title: "Contact card",
       tags: "React, CSS",
       desc: "Personal contact card, where I play around with the React-parallax-tilt library. It serves as a little link tree for my website, linkedin and github.",
-      link: "https://facundosole-card.vercel.app"
+      link: "/personal-contact-card",
+      demo_link: "https://facundosole-card.vercel.app"
     }
   ];
   

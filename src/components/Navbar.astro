@@ -3,7 +3,6 @@ import CTA from "./cta/CTA.astro";
 import NAVBAR_LINKS from "../data/navbar_links";
 
 const pathname = Astro.url.pathname
-console.log(pathname)
 ---
 
 <nav class="section">
@@ -17,15 +16,15 @@ console.log(pathname)
                     </svg>
                 </li>
                 
-                <!-- <li class="hide"><a href="/"><span>Home</span></a></li>
+                <li class="hide"><a href="/"><span>Home</span></a></li>
                 <li class="hide"><a href="/projects"><span>Projects</span></a></li>
                 <li class="hide"><a href="/about-me"><span>About me</span></a></li>
                 <li class="hide"><a href="https://github.com/facusole"><span>Github</span></a></li>
-                <li class="hide"><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li> -->
+                <li class="hide"><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
             </ul>
         </div>
     <button class="menu__container">
-        <img src="/assets/purple__burgerMenu.svg" alt="Expandable burger menu icon to access the navbar links.">
+        <img loading="lazy" src="/assets/purple__burgerMenu.svg" alt="Expandable burger menu icon to access the navbar links.">
         
     </button>
     <ul class="desktop">

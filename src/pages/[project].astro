@@ -1,0 +1,157 @@
+---
+import { PROJECTS } from "../data/projects";
+import ProjectsLayout from "../layouts/ProjectsLayout.astro";
+import { PROJECTS_DESCRIPTIONS } from "../data/projects-descriptions";
+import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
+import TransitionContainer from "../components/transition-container/TransitionContainer.astro";
+
+export function getStaticPaths() {
+  return PROJECTS.map((project) => ({
+    params: { project: project.link },
+  }));
+}
+
+const { project } = Astro.params;
+const projectName = project.replaceAll("-", " ");
+const current_project = PROJECTS_DESCRIPTIONS.filter(
+  ({ slug }) => slug === project
+)[0];
+
+---
+
+<ProjectsLayout title={`Facundo Solé - ${projectName}`}>
+  <main>
+        <img
+          loading="eager"
+          class="project__img"
+          src={current_project.image.src}
+          alt={current_project.image.alt}
+        />
+    <article>
+      <h1>{current_project.title}</h1>
+      {
+        current_project.demo_link ? (
+          <p class="demo_link">
+            Check it out at:
+            <a
+              href={current_project.demo_link}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {current_project.demo_link}
+            </a>
+          </p>
+        ) : null
+      }
+      <div set:html={current_project.content} />
+
+      <section>
+        <p>Technologies used:</p>
+        <ul>
+          {
+            current_project.tags.map((tag) => (
+              <li>
+                <span>{tag}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </article>
+  </main>
+</ProjectsLayout>
+
+<style>
+  main {
+    padding-top: calc(3rem + 4rem);
+    padding-bottom: 3rem;
+  }
+
+  .project__img {
+    object-fit: cover;
+    margin-inline: auto;
+    padding-bottom: 2rem;
+  }     
+
+  section {
+    padding-block: 2rem;
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    flex-direction: column;
+  }
+
+  span {
+    font-size: var(--fs__18);
+    font-weight: var(--fw__semibold);
+    color: var(--clr__primary__purple);
+
+    background: var(--clr__secondary__purple);
+    padding: 0.5rem 1rem;
+    border-radius: 100vh;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .demo_link {
+    padding-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: var(--fs__14);
+    color: var(--clr__gray);
+  }
+  a {
+    color: var(--clr__primary__purple);
+    text-decoration: none;
+  }
+
+  h1 {
+    color: var(--clr__primary__purple);
+    font-size: var(--fs__48);
+  }
+
+  article {
+    max-width: 32ch;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    main {
+      padding-top: calc(5rem + 4rem);
+      padding-bottom: 5rem;
+    }
+
+    article {
+      max-width: 48ch;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    main {
+      padding-top: calc(7rem + 4rem);
+      padding-bottom: 7rem;
+    }
+
+    section {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h1 {
+      font-size: var(--fs__64);
+    }
+
+    article {
+      max-width: 72ch;
+    }
+  }
+</style>

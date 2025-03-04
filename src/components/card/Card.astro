@@ -4,149 +4,119 @@ import { Image } from "astro:assets";
 import TagLabel from "../tagLabel/TagLabel.astro";
 ---
 
-<article>
-    <div class="spacing">
-        <Image width={320} height={240} loading="eager" class="project__img" src={src} alt={alt} />
-        <span>
-            <TagLabel tags={tags} />
-        </span>
-        <h3>{title}</h3>
-        <p>{desc}</p>
-    </div>
-    <div class="onHover__link">
-        <a class="mobile__link" href={link} target="_blank" rel="noreferrer noopener">
-            <span class="view__project">View live demo</span><span class="view__project"><img src="/assets/card__rightArrow.svg" alt="Right arrow indicating that is an external link and you will be redirected"/></span>
-        </a>
-    </div>
-</article>
+<a class="card" href={link}>
+  <div class="spacing">
+    <Image
+      width={320}
+      height={240}
+      loading="eager"
+      class="project__img"
+      src={src}
+      alt={alt}
+      transition:name="image"
+    />
+    <span>
+      <TagLabel tags={tags} />
+    </span>
+    <h3>{title}</h3>
+    <p>{desc}</p>
+  </div>
+</a>
 
 <style>
-    article {
-        width: 19rem;
-        min-height: 604px;
-        position: relative;
-        border: solid 2px var(--clr__ultra__black);
-        border-radius: 2rem;
-        padding: 2rem 1.5rem;
-        scroll-snap-align: start;
+  .card {
+    width: 19rem;
+    min-height: 604px;
+    position: relative;
+    border: solid 2px var(--clr__ultra__black);
+    border-radius: 2rem;
+    padding: 2rem 1.5rem;
+    scroll-snap-align: start;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
 
-        transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    text-decoration: none;
+    color: var(--clr__ultra__black);
+  }
 
+  .spacing {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project__img {
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    margin-inline: auto;
+    border-radius: 1.5rem;
+    border: 2px solid black;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: var(--fs__24);
+    font-weight: var(--fw__medium);
+  }
+
+  p {
+    font-size: var(--fs__18);
+    font-weight: var(--fw__regular);
+  }
+
+  .view__project {
+    color: var(--clr__primary__purple);
+    font-weight: var(--fw__semibold);
+
+    background: var(--clr__secondary__purple);
+    border: solid 1px var(--clr__primary__purple);
+    border-radius: 100vh;
+
+    padding: 0.5rem 1rem;
+  }
+
+  .mobile_link img {
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+  }
+
+  @media (min-width: 768px) {
+    .view__project {
+      font-size: var(--fs__18);
+      font-weight: var(--fw__semibold);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .card {
+      width: 24rem;
+      cursor: pointer;
     }
 
-    .spacing {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+    .card:is(:hover, :focus-within) {
+      border-color: var(--clr__primary__purple);
+      transition: border-color 0.2s linear;
     }
 
-    .project__img {
-        object-fit: cover;
-        aspect-ratio: 4/3;
-        margin-inline: auto;
-        border-radius: 1.5rem;
-        border: 2px solid black;
-        margin-bottom: 1rem;
+    img {
+      width: 20.25rem;
     }
 
     h3 {
-        font-size: var(--fs__24);
-        font-weight: var(--fw__medium);
+      font-size: var(--fs__32);
     }
 
     p {
-        font-size: var(--fs__18);
-        font-weight: var(--fw__regular);
-    }
-
-    a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        transition: all .2s linear;
+      font-size: var(--fs__20);
     }
 
     .view__project {
-        color: var(--clr__primary__purple);
-        font-weight: var(--fw__semibold);
-
-        background: var(--clr__secondary__purple);
-        border: solid 1px var(--clr__primary__purple);
-        border-radius: 100vh;
-
-        padding: 0.5rem 1rem;
+      font-size: var(--fs__18);
+      font-weight: var(--fw__semibold);
     }
-
-    a img {
-        width: 1.5rem;
-        aspect-ratio: 1/1;
-    }
-
-    @media (min-width: 768px) {
-        .view__project {
-            font-size: var(--fs__18);
-            font-weight: var(--fw__semibold);
-        }
-
-        a:is(:hover, :focus-within) {
-            scale: 1.01;
-            translate: 1rem;
-        }
-    }
-
-    @media (min-width: 1024px) {
-
-        article {
-            width: 24rem;
-        }
-
-        img {
-            width: 20.25rem;
-        }
-
-        h3 {
-        font-size: var(--fs__32);
-        }
-
-        p {
-        font-size: var(--fs__20);
-        }
-
-        .view__project {
-            font-size: var(--fs__18);
-            font-weight: var(--fw__semibold);
-        }
-
-        article:is(:hover, :focus-within)::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-color: var(--clr__dark__gray);
-            border-radius: 1.9rem;
-        }
-        
-        .onHover__link {
-            display: none;
-        }
-
-        article:is(:hover, :focus-within) .onHover__link {
-            display: block;
-            width: 250px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: 25;
-            transform: translate(-45%, -50%);
-        }
-
-        a:is(:hover, :focus-within) {
-            scale: 1.01;
-            translate: 1rem;
-        }
-    }
+  }
 </style>

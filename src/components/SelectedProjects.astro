@@ -1,6 +1,7 @@
 ---
 import { PROJECTS } from "../data/projects";
 import Card from "./card/Card.astro";
+import TransitionContainer from "./transition-container/TransitionContainer.astro";
 ---
 
 <section class="section">
@@ -9,6 +10,7 @@ import Card from "./card/Card.astro";
 
       {PROJECTS.slice(0,4).map((project) => (
         <li>
+          <TransitionContainer name={project.link.split("/")[1]}>
           <Card
             src={project.src}
             alt={project.alt}
@@ -17,6 +19,7 @@ import Card from "./card/Card.astro";
             desc={project.desc}
             link={project.link}
           />
+          </TransitionContainer>
         </li>
         )
       )}
