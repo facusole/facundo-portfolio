@@ -2,9 +2,6 @@
 import { PROJECTS } from "../data/projects";
 import ProjectsLayout from "../layouts/ProjectsLayout.astro";
 import { PROJECTS_DESCRIPTIONS } from "../data/projects-descriptions";
-import { Image } from "astro:assets";
-import { ViewTransitions } from "astro:transitions";
-import TransitionContainer from "../components/transition-container/TransitionContainer.astro";
 
 export function getStaticPaths() {
   return PROJECTS.map((project) => ({
