@@ -36,25 +36,26 @@ const pathname = Astro.url.pathname
 </nav>
 
 <script>
-    const body = document.querySelector('#body')
-    const menu = document.querySelector('.menu')
-    const menuBtn = document.querySelector('.menu__container')
-    const menuClose = document.querySelector('svg')
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.querySelector('#body')
+        const menu = document.querySelector('.menu')
+        const menuBtn = document.querySelector('.menu__container')
+        const menuClose = document.querySelector('svg')
 
-    if (menuBtn && menu && body && menuClose) {
+        if (menuBtn && menu && body && menuClose) {
 
-    menuBtn.addEventListener('click', () => {
-        menu.classList.toggle('active')
-        body.classList.toggle('overflow__hidden')
+            menuBtn.addEventListener('click', () => {
+                menu.classList.toggle('active')
+                body.classList.toggle('overflow__hidden')
+            })
 
+            menuClose.addEventListener('click', () => {
+                menu.classList.toggle('active')
+                body.classList.toggle('overflow__hidden')
+                window.scrollTo(0,0)
+            })
+        }
     })
-
-    menuClose.addEventListener('click', () => {
-        menu.classList.toggle('active')
-        body.classList.toggle('overflow__hidden')
-        window.scrollTo(0,0)
-    })
-}
 
     const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
@@ -164,7 +165,7 @@ const pathname = Astro.url.pathname
     .menu ul {
         display: grid;
         place-content: center;
-        gap: 5rem;
+        gap: 3rem;
         padding: 1rem 2rem;
 
         list-style: none;
