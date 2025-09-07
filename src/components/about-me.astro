@@ -22,7 +22,7 @@
       <source srcset="/assets/me__Tablet.avif" media="(min-width: 768px)" />
       <img
         src="/assets/me__Mobile.avif"
-        alt="Picture of Facundo Solé, a frontend developer"
+        alt="Facundo Solé, a frontend developer"
       />
     </picture>
   </div>
@@ -63,7 +63,9 @@
 
 <style>
   section {
-    margin-block: 2rem;
+    margin-top: calc(5.5rem + 24px);
+    margin-bottom: 2rem;
+    padding-inline: 1.5rem;
   }
 
   h1 {
@@ -123,7 +125,8 @@
 
   @media (min-width: 768px) {
     section {
-      margin-block: 5rem;
+      margin-top: calc(6rem + 24px);
+      margin-bottom: 5rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
@@ -159,7 +162,8 @@
 
   @media (min-width: 1024px) {
     section {
-      margin-block: 6.5rem;
+      margin-top: calc(6rem + 24px);
+      margin-bottom: 6.5rem;
       display: grid;
       /* grid-template-columns: repeat(2, 1fr); */
       grid-template-columns: minmax(300px, 500px) minmax(600px, 700px);

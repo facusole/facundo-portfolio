@@ -1,7 +1,6 @@
 ---
-import ProjectsLayout from "../layouts/ProjectsLayout.astro";
-import Navbar from "../components/Navbar.astro";
-import ProjectsContainer from "../components/ProjectsContainer.astro";
+import ProjectsLayout from "../layouts/projects-layout.astro";
+import ProjectsContainer from "../components/projects-container.astro";
 ---
 
 <ProjectsLayout title="Facundo Solé - Projects">
@@ -24,7 +23,8 @@ import ProjectsContainer from "../components/ProjectsContainer.astro";
 <style>
 
     main {
-        margin-block: 2.5rem;
+        margin-top: calc(5.5rem + 24px);
+        margin-bottom: 2.5rem;
     }
     h2 {
         font-size: var(--fs__20);
@@ -42,7 +42,8 @@ import ProjectsContainer from "../components/ProjectsContainer.astro";
     @media (min-width: 1024px) {
 
         main {
-            margin-block: 5rem;
+            margin-top: calc(6rem + 24px);
+            margin-bottom: 5rem;
         }
 
         h2 {

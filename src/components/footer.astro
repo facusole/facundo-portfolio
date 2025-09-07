@@ -25,9 +25,12 @@ import { FOOTER_LINKS } from "../data/footer_links";
 <script>
   const backToTop = document.querySelector(".backTo__top");
 
-  backToTop.addEventListener("click", () =>
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  );
+  if(backToTop) {
+    backToTop.addEventListener("click", () =>
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    );
+  }
+
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

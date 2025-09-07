@@ -1,20 +1,20 @@
 ---
-import Card from "./card/Card.astro";
+import Card from "./card-component/card.astro";
 import { PROJECTS } from "../data/projects";
 ---
 
 <section>
   <ul>
   {
-    PROJECTS.map((project) => (
+    PROJECTS.map(({src, alt, title, tags, desc, link}) => (
       <li>
         <Card
-          src={project.src}
-          alt={project.alt}
-          title={project.title}
-          tags={project.tags}
-          desc={project.desc}
-          link={project.link}
+          src={src}
+          alt={alt}
+          title={title}
+          tags={tags}
+          desc={desc}
+          link={link}
         />
       </li>
     ))

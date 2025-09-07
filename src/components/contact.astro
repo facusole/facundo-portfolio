@@ -2,7 +2,7 @@
   const btn = document.querySelector(".copyInteraction");
   const mail = "facundojsole@gmail.com";
 
-  btn.addEventListener("click", () => {
+  btn?.addEventListener("click", () => {
     btn.innerHTML = "Copied!";
     navigator.clipboard.writeText(mail);
 

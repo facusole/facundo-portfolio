@@ -1,4 +1,13 @@
-export const PROJECTS = [
+type Project = {
+  src: string;
+  alt: string;
+  title: string;
+  tags: string;
+  desc: string;
+  link: string;
+}
+
+export const PROJECTS: Project[] = [
     {
       src: "/assets/projects/humankind__cover.jpg",
       alt: "Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?",
@@ -6,14 +15,6 @@ export const PROJECTS = [
       tags: "Next, TypeScript, Tailwind",
       desc: "Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?",
       link: "https://www.humankind.art/wrestle"
-    },
-    {
-      src: "/assets/projects/tateti__cover.jpg",
-      alt: "Landing page for Grupo Tateti, a non-profit organization from Argentina.",
-      title: "Grupo Tateti",
-      tags: "Astro, CSS, JavaScript",
-      desc: "Landing page for Grupo Tateti, a non-profit organization from Argentina.",
-      link: "https://www.grupotateti.org.ar"
     },
     {
         src: "/assets/projects/pokedex__cover.jpg",
