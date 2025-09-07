@@ -29,7 +29,7 @@ const pathname = Astro.url.pathname
     </button>
     <ul class="desktop">
         {NAVBAR_LINKS.map((item) => (
-            <li class="hide"><a class={pathname === item.href ? "active" : ""} href={item.href} target={item.href.includes("https") ? "_blank" : "_self"} rel="noopener noreferrer"><span>{item.name}</span></a></li> 
+            <li class="hide"><a class={pathname === item.href ? "active" : ""} href={item.href} target={item.href.includes("https") ? "_blank" : "_self"} rel="noopener noreferrer" data-astro-prefetch><span>{item.name}</span></a></li> 
         ))}
     </ul>
     <CTA cta='Contact me' />
