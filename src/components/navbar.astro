@@ -1,0 +1,283 @@
+---
+import CTA from "./cta-component/cta.astro";
+import NAVBAR_LINKS from "../data/navbar_links";
+
+const pathname = Astro.url.pathname
+---
+
+<nav class="section">
+    <div class="menu">
+            <ul>
+                <li class="hide">
+                    <svg width="50" height="50" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#6e6e6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9.16998 14.83L14.83 9.17004" stroke="#6e6e6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.83 14.83L9.16998 9.17004" stroke="#6e6e6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </li>
+                
+                <li class="hide"><a href="/"><span>Home</span></a></li>
+                <li class="hide"><a href="/projects"><span>Projects</span></a></li>
+                <li class="hide"><a href="/about-me"><span>About me</span></a></li>
+                <li class="hide"><a href="https://github.com/facusole"><span>Github</span></a></li>
+                <li class="hide"><a href="https://www.linkedin.com/in/facundo-sole/"><span>Linkedin</span></a></li>
+            </ul>
+        </div>
+    <button class="menu__container">
+        <img src="/assets/purple__burgerMenu.svg" alt="Expandable burger menu icon to access the navbar links.">
+        
+    </button>
+    <ul class="desktop">
+        {NAVBAR_LINKS.map((item) => (
+            <li class="hide"><a class={pathname === item.href ? "active" : ""} href={item.href} target={item.href.includes("https") ? "_blank" : "_self"} rel="noopener noreferrer"><span>{item.name}</span></a></li> 
+        ))}
+    </ul>
+    <CTA cta='Contact me' />
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const body = document.querySelector('#body')
+        const menu = document.querySelector('.menu')
+        const menuBtn = document.querySelector('.menu__container')
+        const menuClose = document.querySelector('svg')
+
+        if (menuBtn && menu && body && menuClose) {
+
+            menuBtn.addEventListener('click', () => {
+                menu.classList.toggle('active')
+                body.classList.toggle('overflow__hidden')
+            })
+
+            menuClose.addEventListener('click', () => {
+                menu.classList.toggle('active')
+                body.classList.toggle('overflow__hidden')
+                window.scrollTo(0,0)
+            })
+        }
+    })
+
+    const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if(entry.isIntersecting) {
+				entry.target.classList.add('fade__animation')
+			}
+		})
+	})
+
+    const observerMenu = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if(entry.isIntersecting) {
+				entry.target.classList.add('show')
+			} else {
+				entry.target.classList.remove('show')
+            }
+		})
+	})
+
+	const section = document.querySelectorAll('.section')
+    const menuLinks = document.querySelectorAll('.hide')
+
+	section.forEach((el) => observer.observe(el))
+	menuLinks.forEach((el) => observerMenu.observe(el))
+
+</script>
+
+<style is:global>
+
+.overflow__hidden {
+    overflow: hidden;
+}
+
+</style>
+
+<style>
+
+    .active {
+        position: relative;
+    }
+
+    .active::after {
+        content: '';
+        position: absolute;
+        bottom: .5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--clr__primary__purple);
+        transition: all .2s linear;
+    }
+
+    .active:is(:hover, :focus-within)::after {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        inset-inline: 1.5rem;
+        z-index: 9999;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+
+        background-color: var(--clr__secondary__purple);
+        border-radius: 100vh;
+        padding: .5rem 1rem;
+        box-shadow: 0px 6px 30px 3px rgba(81,56,245,0.10);
+        -webkit-box-shadow: 0px 6px 30px 3px rgba(81,56,245,0.10);
+        -moz-box-shadow: 0px 6px 30px 3px rgba(81,56,245,0.10);
+
+        font-weight: var(--fw__medium);
+    }
+
+    .menu__container {
+        background: var(--clr__white);
+
+        border: 1px solid var(--clr__ultra__black);
+        border-radius: 100vh;
+        cursor: pointer;
+        padding: .5rem .75rem;
+
+        transition: transform .2s linear;
+    }
+
+    .menu {
+        display: block;
+        position: fixed;
+        inset: 0;
+        min-height: 100dvh;
+        transform: translateY(-150vh);
+        transition: 1s;
+
+        background-color: var(--clr__ultra__black);
+        z-index: 50;
+    }
+
+    .active {
+        transform: none;
+    }
+
+    .menu ul {
+        display: grid;
+        place-content: center;
+        gap: 3rem;
+        padding: 1rem 2rem;
+
+        list-style: none;
+        min-height: 100dvh;
+        text-align: center;
+    }
+
+    .menu li {
+        width: min(20rem, 40rem);
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: var(--clr__white);
+        font-size: var(--fs__36);
+        width: 20ch;
+    }
+
+    svg {
+        position: absolute;
+        inset: 3rem 2rem auto auto;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+
+        nav {
+            flex-direction: row;
+            inset-inline: 3rem
+        }
+
+        .menu__container {
+            display: none;
+        }
+
+        .desktop {
+            position: relative;
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--clr__primary__purple);
+            font-size: var(--fs__18);
+            font-weight: var(--fw__medium);
+            padding: 1rem;
+        }
+
+        span {
+            position: relative;
+        }
+
+        a:is(:hover, :focus-within) span::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom:-2px;
+            height: 2px;
+            width: 100%;
+            background-color: var(--clr__primary__purple);
+            animation: hoverEffect .2s linear;
+        }
+
+        @keyframes hoverEffect {
+            from {width: 0;}
+            to {width: 100%;}
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        nav {
+            font-size: var(--fs__20);
+            inset-inline: 6rem;
+        }
+        
+        a {
+            font-size: var(--fs__20);
+        }
+    }
+
+      /* ------------------- FADE-IN ANIMATION ----------------- */
+
+    .hide {
+		opacity: 0;
+        transition: all 1s;
+	}
+
+    .show {
+        opacity: 1;
+    }
+
+    .menu ul li:nth-child(2) {
+        transition-delay: 200ms;
+    }
+    .menu ul li:nth-child(3) {
+        transition-delay: 300ms;
+    }
+    .menu ul li:nth-child(4) {
+        transition-delay: 400ms;
+    }
+    .menu ul li:nth-child(5) {
+        transition-delay: 500ms;
+    }
+    .menu ul li:nth-child(6) {
+        transition-delay: 600ms;
+    }
+
+
+</style>
