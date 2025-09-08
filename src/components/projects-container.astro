@@ -6,7 +6,7 @@ import { PROJECTS } from "../data/projects";
 <section>
   <ul>
   {
-    PROJECTS.map(({src, alt, title, tags, desc, link}) => (
+    PROJECTS.map(({src, alt, title, tags, desc, link, slug}) => (
       <li>
         <Card
           src={src}
@@ -15,6 +15,7 @@ import { PROJECTS } from "../data/projects";
           tags={tags}
           desc={desc}
           link={link}
+          slug={slug}
         />
       </li>
     ))
