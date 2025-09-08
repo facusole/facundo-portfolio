@@ -25,6 +25,7 @@ const { title } = Astro.props;
     <meta property="og:url" content="https://www.facundosole.com.ar/" />
     <meta property="og:description" content="Personal website portfolio for Facundo Solé, a frontend developer from Argentina. He excels working with Next.JS and Astro.build, but he's able to work with any JavaScript Frameworks like Angular and Vue.JS."  />
     <meta property="og:image" content="https://www.facundosole.com.ar/cover.webp" />
+    <meta name="view-transition" content="same-origin" />
     <title>{title}</title>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
     ></script>
@@ -171,6 +172,12 @@ const { title } = Astro.props;
     height: 2rem;
   }
 
+  /* ------------------- VIEW TRANSITIONS ----------------- */
+  
+  @view-transition {
+    navigation: auto;
+  }
+
   @media (min-width: 768px) {
     .p__inline {
       padding-inline: 3rem;
@@ -190,7 +197,7 @@ const { title } = Astro.props;
   /* ------------------- FADE-IN ANIMATION ----------------- */
 
   .fade__animation {
-    animation: fade-up 1s ease;
+    animation: fade-up 0.3s ease;
   }
 
   @keyframes fade-up {

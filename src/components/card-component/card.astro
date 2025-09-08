@@ -1,5 +1,5 @@
 ---
-const { src, alt, title, desc, link, tags } = Astro.props;
+const { src, alt, title, desc, tags, slug } = Astro.props;
 import { Image } from 'astro:assets';
 
 import TagLabel from "../tag-label/tag-label.astro";
@@ -15,8 +15,8 @@ import TagLabel from "../tag-label/tag-label.astro";
         <p>{desc}</p>
     </div>
     <div class="onHover__link">
-        <a class="mobile__link" href={link} target="_blank" rel="noreferrer noopener">
-            <span class="view__project">View live demo</span><span class="view__project"><img src="/assets/card__rightArrow.svg" alt="Right arrow indicating that is an external link and you will be redirected"/></span>
+        <a class="mobile__link" href={`/${slug}`}>
+            <span class="view__project">View project</span><span class="view__project"><img src="/assets/card__rightArrow.svg" alt="Right arrow indicating that is an external link and you will be redirected"/></span>
         </a>
     </div>
 </article>
@@ -87,6 +87,7 @@ import TagLabel from "../tag-label/tag-label.astro";
         width: 1.5rem;
         aspect-ratio: 1/1;
     }
+
 
     @media (min-width: 768px) {
         .view__project {
