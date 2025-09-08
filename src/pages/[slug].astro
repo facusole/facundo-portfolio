@@ -2,6 +2,7 @@
 import { PROJECTS } from "../data/projects.ts";
 import ProjectsLayout from "../layouts/projects-layout.astro";
 import ArrowLeft from "../components/arrow-left.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   return PROJECTS.map((project) => ({
@@ -18,15 +19,15 @@ const { project } = Astro.props;
   <main>
     <div>
       <div class="page-header">
-        <a href="javascript:history.back()" class="back-link">
+        <button onclick="history.back()" class="back-link">
           <ArrowLeft />
           Back
-        </a>
+        </button>
         <h1>{project.title}</h1>
       </div>
       
       <div class="project-hero">
-        <img src={project.src} alt={project.alt} class="project-image" />
+        <Image height={280} width={520} src={project.src} alt={project.alt} class="project-image" loading="eager" />
       </div>
       
       <div class="rich-content" set:html={project.content || `
@@ -82,11 +83,14 @@ const { project } = Astro.props;
     transition: color 0.2s ease;
     background: transparent;
     padding: 0;
+    border: none;
+    cursor: pointer;
   }
 
   .page-header .back-link:hover {
     color: hsl(248, 90%, 50%);
     background: transparent;
+  
   }
 
   .back-link :global(svg) {
@@ -125,7 +129,7 @@ const { project } = Astro.props;
   /* View Transition Styles */
   ::view-transition-old(root),
   ::view-transition-new(root) {
-    animation-duration: 0.3s;
+    animation-duration: 0.6s;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
