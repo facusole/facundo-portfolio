@@ -9,6 +9,14 @@ type Project = {
 
 export const PROJECTS: Project[] = [
     {
+      src: "/assets/projects/aura-sync/aura-sync-cover.webp",
+      alt: "AuraSync AI landing page case study - a 2026-modern marketing site for an AI client sentiment tool, built with Astro for speed and SEO.",
+      title: "AuraSync AI",
+      tags: "Claude Design, Claude Code",
+      desc: "Landing page case study for a fictional SaaS that tracks client sentiment across Slack, email, and Zoom. Built with Astro for sub-1.2s loads and SEO-first delivery, with a bento feature grid, interactive sentiment sandbox, and ROI calculator.",
+      link: "https://aura-sync-ten.vercel.app/"
+    },
+    {
       src: "/assets/projects/humankind__cover.jpg",
       alt: "Get into turn-based fights with different monsters that appear in the Land of Kinds. Can you defeat them all?",
       title: "Humankind - Wrestle",
